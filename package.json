@@ -3,7 +3,7 @@
   "keywords": [
     "deep-package"
   ],
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "npm-pull": "(git diff --quiet || (echo 'You have unstaged changes. Stash them (git stash) or commit them (git commit)'; exit 1)) && npm install ${npm_package_name}@latest --no-save && mv --force node_modules/${npm_package_name}/deep.json ./",
     "build": "tsc"
@@ -17,7 +17,7 @@
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
     "@freephoenix888/object-to-links-async-converter": "^0.0.10"
-  }, 
+  },
   "peerDependencies": {
     "@deep-foundation/deeplinks": "~0.0.164",
     "@capacitor/motion": "^4.0.2"
