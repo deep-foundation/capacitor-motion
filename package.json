@@ -16,7 +16,10 @@
   ],
   "dependencies": {
     "@deep-foundation/core": "^0.0.2",
-    "@freephoenix888/object-to-links-async-converter": "^0.0.10",
-    "@deep-foundation/capacitor-device": "^1.0.0"
+    "@freephoenix888/object-to-links-async-converter": "^0.0.10"
+  }, 
+  "peerDependencies": {
+    "@deep-foundation/deeplinks": "~0.0.164",
+    "@capacitor/motion": "^4.0.2"
   }
 }
