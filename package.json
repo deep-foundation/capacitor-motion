@@ -5,7 +5,7 @@
   ],
   "version": "0.0.7",
   "scripts": {
-    "fetch": "npm install ${npm_package_name}@latest --no-save && (if [ -f ./node_modules/${npm_package_name}/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/${npm_package_name}/deep.json ./",
+    "npm-pull": "(git diff --quiet || (echo 'You have unstaged changes. Stash them (git stash) or commit them (git commit)'; exit 1)) && npm install ${npm_package_name}@latest --no-save && mv --force node_modules/${npm_package_name}/deep.json ./",
     "build": "tsc"
   },
   "main": "dist/main.js",
