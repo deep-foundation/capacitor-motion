@@ -1,0 +1,22 @@
+{
+  "name": "@deep-foundation/capacitor-motion",
+  "keywords": [
+    "deep-package"
+  ],
+  "version": "0.0.7",
+  "scripts": {
+    "fetch": "npm install ${npm_package_name}@latest --no-save && (if [ -f ./node_modules/${npm_package_name}/deep.json ]; then rm -f ./deep.json; fi;) && mv node_modules/${npm_package_name}/deep.json ./",
+    "build": "tsc"
+  },
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "/dist",
+    "./deep.json"
+  ],
+  "dependencies": {
+    "@deep-foundation/core": "^0.0.2",
+    "@freephoenix888/object-to-links-async-converter": "^0.0.10",
+    "@deep-foundation/capacitor-device": "^1.0.0"
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "package": {
+    "name": "@deep-foundation/capacitor-motion",
+    "version": "0.0.7"
+  },
+  "data": [
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "Config"
+      },
+      "id": 1
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "Type"
+      },
+      "id": 2
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "Value"
+      },
+      "id": 3
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "Number"
+      },
+      "id": 4
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "HandleUpdate"
+      },
+      "id": 5
+    },
+    {
+      "package": {
+        "dependencyId": 0,
+        "containValue": "UpdateHandler"
+      },
+      "id": 6
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "Object"
+      },
+      "id": 7
+    },
+    {
+      "package": {
+        "dependencyId": 1,
+        "containValue": "Any"
+      },
+      "id": 8
+    },
+    {
+      "package": {
+        "dependencyId": 2,
+        "containValue": "Device"
+      },
+      "id": 9
+    },
+    {
+      "id": "ConfigFor@freephoenix888/object-to-links-async-converter",
+      "type": 1,
+      "value": {
+        "value": {
+          "addTypeNameToPropertyName": true
+        }
+      }
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityZ",
+      "type": 2,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityZ",
+      "type": 3,
+      "from": "MotionAccelerationIncludingGravityZ",
+      "to": 4
+    },
+    {
+      "id": "MotionAccelerationIncludingGravity",
+      "type": 2,
+      "from": "Motion",
+      "to": "Motion"
+    },
+    {
+      "id": "HandleMotionAccelerationIncludingGravityUpdate",
+      "type": 5,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": 6
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityY",
+      "type": 2,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityY",
+      "type": 3,
+      "from": "MotionAccelerationIncludingGravityY",
+      "to": 4
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityX",
+      "type": 2,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityX",
+      "type": 3,
+      "from": "MotionAccelerationIncludingGravityX",
+      "to": 4
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravity",
+      "type": 3,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": 7
+    },
+    {
+      "id": "MotionAccelerationY",
+      "type": 2,
+      "from": "MotionAcceleration",
+      "to": "MotionAcceleration"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationY",
+      "type": 3,
+      "from": "MotionAccelerationY",
+      "to": 4
+    },
+    {
+      "id": "MotionRotationRateGamma",
+      "type": 2,
+      "from": "MotionRotationRate",
+      "to": "MotionRotationRate"
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRateGamma",
+      "type": 3,
+      "from": "MotionRotationRateGamma",
+      "to": 4
+    },
+    {
+      "id": "MotionRotationRateAlpha",
+      "type": 2,
+      "from": "MotionRotationRate",
+      "to": "MotionRotationRate"
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRateAlpha",
+      "type": 3,
+      "from": "MotionRotationRateAlpha",
+      "to": 4
+    },
+    {
+      "id": "Motion",
+      "type": 2,
+      "from": 9,
+      "to": 9
+    },
+    {
+      "id": "HandleMotionUpdate",
+      "type": 5,
+      "from": "Motion",
+      "to": 6
+    },
+    {
+      "id": "MotionAcceleration",
+      "type": 2,
+      "from": "Motion",
+      "to": "Motion"
+    },
+    {
+      "id": "MotionAccelerationZ",
+      "type": 2,
+      "from": "MotionAcceleration",
+      "to": "MotionAcceleration"
+    },
+    {
+      "id": "MotionAccelerationX",
+      "type": 2,
+      "from": "MotionAcceleration",
+      "to": "MotionAcceleration"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationX",
+      "type": 3,
+      "from": "MotionAccelerationX",
+      "to": 4
+    },
+    {
+      "id": "TypeOfValueOfMotionAcceleration",
+      "type": 3,
+      "from": "MotionAcceleration",
+      "to": 7
+    },
+    {
+      "id": "MotionInterval",
+      "type": 2,
+      "from": "Motion",
+      "to": "Motion"
+    },
+    {
+      "id": "TypeOfValueOfInterval",
+      "type": 3,
+      "from": "MotionInterval",
+      "to": 4
+    },
+    {
+      "id": "TypeOfValueOfMotion",
+      "type": 3,
+      "from": "Motion",
+      "to": 7
+    },
+    {
+      "id": "MotionRotationRate",
+      "type": 2,
+      "from": "Motion",
+      "to": "Motion"
+    },
+    {
+      "id": "HandleMotionRotationRateUpdate",
+      "type": 5,
+      "from": "MotionRotationRate",
+      "to": 6
+    },
+    {
+      "id": "MotionRotationRateBeta",
+      "type": 2,
+      "from": "MotionRotationRate",
+      "to": "MotionRotationRate"
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRateBeta",
+      "type": 3,
+      "from": "MotionRotationRateBeta",
+      "to": 4
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRate",
+      "type": 3,
+      "from": "MotionRotationRate",
+      "to": 7
+    },
+    {
+      "id": "HandleMotionAccelerationUpdate",
+      "type": 5,
+      "from": "MotionAcceleration",
+      "to": 6
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationZ",
+      "type": 3,
+      "from": "MotionAccelerationZ",
+      "to": 4
+    }
+  ],
+  "errors": [],
+  "dependencies": [
+    {
+      "name": "@freephoenix888/object-to-links-async-converter",
+      "version": "0.0.10"
+    },
+    {
+      "name": "@deep-foundation/core",
+      "version": "0.0.2"
+    },
+    {
+      "name": "@deep-foundation/capacitor-device",
+      "version": "1.0.0"
+    }
+  ]
+}

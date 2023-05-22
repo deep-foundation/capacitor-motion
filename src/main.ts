@@ -1,0 +1,5 @@
+export {MOTION_PACKAGE_NAME} from './package-name'
+export {saveMotionInfo,MotionInfo} from './save-motion-info'
+export {requestMotionPermissions} from './request-motion-permissions'
+export {subscribeToAccelerationChanges,SubscribeToAccelerationChangesParam} from './subscribe-to-acceleration-changes'
+export {subscribeToOrientationChanges,SubscribeToOrientationChangesParam} from './subscribe-to-orientation-changes'
