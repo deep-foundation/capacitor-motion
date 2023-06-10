@@ -21,8 +21,9 @@
     "deep.json"
   ],
   "dependencies": {
+    "@deep-foundation/capacitor-device": "^3.0.0",
     "@deep-foundation/core": "^0.0.2",
-    "@deep-foundation/npm-automation": "^1.0.0",
+    "@deep-foundation/npm-automation": "^1.0.3",
     "@freephoenix888/object-to-links-async-converter": "^0.0.10"
   },
   "peerDependencies": {
