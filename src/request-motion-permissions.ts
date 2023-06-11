@@ -1,3 +1,6 @@
+/**
+ * Requests motion permissions
+ */
 export async function requestMotionPermissions() {
   if ('requestPermission' in DeviceMotionEvent) {
     // @ts-ignore

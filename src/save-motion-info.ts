@@ -15,6 +15,48 @@ import { MotionInfo } from './motion-info';
    * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
    * @throws if {@link deviceLink} is passed but it does not exist
    * @throws if {@link deviceLinkId} is passed but it does not exist
+   * 
+   * @example
+#### Subscribe to acceleration changes by using this library and save them
+```ts
+const accelerationHandler = await subscribeToAccelerationChanges({
+  deep,
+  deviceLinkId,
+});
+```
+#### Subscribe to orientation changes by using this library and save them
+```ts
+const newOrientationHandler = await subscribeToOrientationChanges({
+  deep,
+  deviceLinkId,
+});
+```
+#### Subscribe to acceleration changes by using @capacitor/motion library and save them
+```ts
+const accelerationListener = await Motion.addListener(
+  'accel',
+  async (accelData) => {
+    await saveMotionInfo({
+      deep,
+      deviceLinkId,
+      info: accelData,
+    });
+  }
+);
+```
+#### Subscribe to orientation changes by using @capacitor/motion library and save them
+```ts
+const accelerationListener = await Motion.addListener(
+  'orientation',
+  async (orientationData) => {
+    await saveMotionInfo({
+      deep,
+      deviceLinkId,
+      info: orientationData,
+    });
+  }
+);
+```
    */
 export async function saveMotionInfo(
   params: SaveMotionInfoParam
