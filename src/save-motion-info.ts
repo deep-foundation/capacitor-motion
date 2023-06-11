@@ -109,7 +109,9 @@ export async function saveMotionInfo(
    */
   async function getDeviceLink() {
     let deviceLink: Link<number>;
-    if ('deviceLinkId' in params) {
+    if('deviceLinkId' in params && 'deviceLink' in params) {
+      throw new Error(`Both deviceLinkId and deviceLink are passed. Either deviceLink or deviceLinkId must be passed`)
+    } else if ('deviceLinkId' in params) {
       const { data } = await deep.select({
         id: params.deviceLinkId,
       });
