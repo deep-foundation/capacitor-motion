@@ -15,6 +15,7 @@ import { MotionInfo } from './motion-info';
    * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
    * @throws if {@link deviceLink} is passed but it does not exist
    * @throws if {@link deviceLinkId} is passed but it does not exist
+   * @throws if both {@link deviceLink} and {@link deviceLinkId} are passed
    * 
    * @example
 #### Subscribe to acceleration changes by using this library and save them
