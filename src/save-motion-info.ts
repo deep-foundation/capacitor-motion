@@ -18,8 +18,6 @@ export type MotionInfo =
    * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
    * @throws if {@link deviceLink} is passed but it does not exist
    * @throws if {@link deviceLinkId} is passed but it does not exist
-   * 
-   * @param params 
    */
 export async function saveMotionInfo(
   params: SaveMotionInfoParam
