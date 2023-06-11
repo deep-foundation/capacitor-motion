@@ -7,10 +7,7 @@ import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
-
-export type MotionInfo =
-  | AccelListenerEvent
-  | Pick<AccelListenerEvent, 'rotationRate'>;
+import { MotionInfo } from './motion-info';
 
   /**
    * Saves {@link SaveMotionInfoParam.info} to the value of {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed
