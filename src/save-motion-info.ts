@@ -13,7 +13,7 @@ export type MotionInfo =
   | Pick<AccelListenerEvent, 'rotationRate'>;
 
 export async function saveMotionInfo(
-  params: { deep: DeepClient; info: MotionInfo } & (
+  params: { deep: DeepClient; info: Partial<MotionInfo> } & (
     | { deviceLinkId: number }
     | { deviceLink: Link<number> }
   )
@@ -155,33 +155,33 @@ export async function saveMotionInfo(
     });
   }
 
-  async function fixMotionInfo({ info }: { info: MotionInfo }) {
+  async function fixMotionInfo({ info }: { info: Partial<MotionInfo> }): Promise<Partial<MotionInfo>> {
     // capacitor-motion actually actually pass to us object with extra fields that are not specified in their typescript interface
     return {
       ...('acceleration' in info
         ? {
             acceleration: {
-              x: info.acceleration.x,
-              y: info.acceleration.y,
-              z: info.acceleration.z,
+              x: info.acceleration!.x,
+              y: info.acceleration!.y,
+              z: info.acceleration!.z,
             },
           }
         : {}),
       ...('accelerationIncludingGravity' in info
         ? {
             accelerationIncludingGravity: {
-              x: info.accelerationIncludingGravity.x,
-              y: info.accelerationIncludingGravity.y,
-              z: info.accelerationIncludingGravity.z,
+              x: info.accelerationIncludingGravity!.x,
+              y: info.accelerationIncludingGravity!.y,
+              z: info.accelerationIncludingGravity!.z,
             },
           }
         : {}),
       ...('rotationRate' in info
         ? {
             rotationRate: {
-              alpha: info.rotationRate.alpha,
-              beta: info.rotationRate.beta,
-              gamma: info.rotationRate.gamma,
+              alpha: info.rotationRate!.alpha,
+              beta: info.rotationRate!.beta,
+              gamma: info.rotationRate!.gamma,
             },
           }
         : {}),
