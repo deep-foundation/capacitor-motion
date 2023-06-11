@@ -18,7 +18,7 @@ export async function saveMotionInfo(
     | { deviceLink: Link<number> }
   )
 ) {
-  const info = await fixMotionInfo({ info: params.info });
+  const info = await removeRedundantFieldsFromMotionInfo({ info: params.info });
 
   console.log({ params });
   const { deep } = params;
@@ -155,7 +155,7 @@ export async function saveMotionInfo(
     });
   }
 
-  async function fixMotionInfo({ info }: { info: Partial<MotionInfo> }): Promise<Partial<MotionInfo>> {
+  async function removeRedundantFieldsFromMotionInfo({ info }: { info: Partial<MotionInfo> }): Promise<Partial<MotionInfo>> {
     // capacitor-motion actually actually pass to us object with extra fields that are not specified in their typescript interface
     return {
       ...('acceleration' in info
