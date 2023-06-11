@@ -10,7 +10,10 @@ import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import { MotionInfo } from './motion-info';
 
   /**
-   * Saves {@link SaveMotionInfoParam.info} to the value of {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed
+   * Saves {@link SaveMotionInfoParam.info} to the value of a link of type `Motion` which from and to will be {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed
+   * 
+   * @remarks
+   * After value of Motion link is updated, a handler from `@freephoenix888/object-to-links-async-converter` will create links to represent the value
    * 
    * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
    * @throws if {@link deviceLink} is passed but it does not exist
