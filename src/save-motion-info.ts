@@ -157,7 +157,6 @@ export async function saveMotionInfo(
 
   async function fixMotionInfo({ info }: { info: MotionInfo }) {
     // capacitor-motion actually actually pass to us object with extra fields that are not specified in their typescript interface
-    // @ts-ignore
     return {
       ...('acceleration' in info
         ? {
