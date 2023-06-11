@@ -12,11 +12,17 @@ export type MotionInfo =
   | AccelListenerEvent
   | Pick<AccelListenerEvent, 'rotationRate'>;
 
+  /**
+   * Saves {@link SaveMotionInfoParam.info} to the value of {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed
+   * 
+   * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
+   * @throws if {@link deviceLink} is passed but it does not exist
+   * @throws if {@link deviceLinkId} is passed but it does not exist
+   * 
+   * @param params 
+   */
 export async function saveMotionInfo(
-  params: { deep: DeepClient; info: Partial<MotionInfo> } & (
-    | { deviceLinkId: number }
-    | { deviceLink: Link<number> }
-  )
+  params: SaveMotionInfoParam
 ) {
   const info = await removeRedundantFieldsFromMotionInfo({ info: params.info });
 
@@ -57,6 +63,13 @@ export async function saveMotionInfo(
     operations: serialOperations,
   });
 
+  /**
+   * Gets link of type {@link Device} 
+   * 
+   * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
+   * @throws if {@link deviceLink} is passed but it does not exist
+   * @throws if {@link deviceLinkId} is passed but it does not exist
+   */
   async function getDeviceLink() {
     let deviceLink: Link<number>;
     if ('deviceLinkId' in params) {
@@ -72,6 +85,9 @@ export async function saveMotionInfo(
     return deviceLink;
   }
 
+  /**
+   * Gets link of type {@link Motion} with id {@link motionLinkId} or undefined if it does not exist
+   */
   async function getMotionLinkOrUndefined({
     deviceLinkId,
   }: {
@@ -93,6 +109,9 @@ export async function saveMotionInfo(
     return motionLink;
   }
 
+  /**
+   * Gets serial operation that inserts link of type {@link Motion} with id {@link motionLinkId} to {@link deviceLinkId}
+   */
   async function getMotionLinkInsertSerialOperation({
     deviceLinkId,
     motionLinkId,
@@ -123,6 +142,9 @@ export async function saveMotionInfo(
     });
   }
 
+  /**
+   * Gets serial operation that inserts value of a link of type {@link Motion} with id {@link motionLinkId} to {@link info}
+   */
   async function getMotionLinkValueInsertSerialOperation({
     motionLinkId,
   }: {
@@ -138,6 +160,9 @@ export async function saveMotionInfo(
     });
   }
 
+  /**
+   * Gets serial operation that updates value of a link of type {@link Motion} with id {@link motionLinkId} to {@link info}
+   */
   async function getMotionLinkValueUpdateSerialOperation({
     motionLinkId,
   }: {
@@ -155,6 +180,9 @@ export async function saveMotionInfo(
     });
   }
 
+  /**
+   * Removes redundant fields from an object of type {@link MotionInfo} because they contain extra fields that are not specified in their typescript interface
+   */
   async function removeRedundantFieldsFromMotionInfo({ info }: { info: Partial<MotionInfo> }): Promise<Partial<MotionInfo>> {
     // capacitor-motion actually actually pass to us object with extra fields that are not specified in their typescript interface
     return {
@@ -189,3 +217,8 @@ export async function saveMotionInfo(
     };
   }
 }
+
+export type SaveMotionInfoParam = { deep: DeepClient; info: Partial<MotionInfo> } & (
+  | { deviceLinkId: number }
+  | { deviceLink: Link<number> }
+);
