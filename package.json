@@ -23,7 +23,6 @@
   "dependencies": {
     "@deep-foundation/capacitor-device": "^3.0.0",
     "@deep-foundation/core": "^0.0.2",
-    "@deep-foundation/npm-automation": "^1.0.3",
     "@freephoenix888/object-to-links-async-converter": "^0.0.10"
   },
   "peerDependencies": {
@@ -32,6 +31,7 @@
   },
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.7",
+    "@deep-foundation/npm-automation": "^1.0.3",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
     "fs-extra": "^11.1.1",
