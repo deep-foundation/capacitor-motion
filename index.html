@@ -12,7 +12,46 @@
 <div class="col-content">
 <div class="tsd-page-title">
 <h2>@deep-foundation/capacitor-motion</h2></div>
-<div class="tsd-panel tsd-typography"></div></div>
+<div class="tsd-panel tsd-typography"><p><a href="https://www.npmjs.com/package/@deep-foundation/capacitor-motion"><img src="https://img.shields.io/npm/v/@deep-foundation/capacitor-motion.svg" alt="npm"></a> 
+<a href="https://gitpod.io/#https://github.com/deep-foundation/capacitor-motion"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" alt="Gitpod"></a> 
+<a href="https://discord.gg/deep-foundation"><img src="https://badgen.net/badge/icon/discord?icon=discord&label&color=purple" alt="Discord"></a></p>
+<p>Provides links based on <a href="https://www.npmjs.com/package/@capacitor/motion"><code>@capacitor/motion</code></a>.</p>
+<p><a href="https://deep-foundation.github.io/capacitor-motion/">Documentation</a></p>
+<a id="md:how-to-use" class="tsd-anchor"></a><h2><a href="#md:how-to-use">How to use?</a></h2><a id="md:prerequisitions" class="tsd-anchor"></a><h3><a href="#md:prerequisitions">Prerequisitions</a></h3><ol>
+<li>Install this package in your deep by using npm-packager</li>
+</ol>
+<a id="md:by-using-deepclient-deepcaseprogrammatic" class="tsd-anchor"></a><h3><a href="#md:by-using-deepclient-deepcaseprogrammatic">By using DeepClient (DeepCase/programmatic)</a></h3><ol>
+<li>Insert a link of type Motion </li>
+<li>Change its object value to the object with propertied described in <a href="#md:motion-object-value">Motion Object Value</a><br>or<br>Insert a link of any type with any property name from <a href="#md:motion-object-value">Motion Object Value</a> from Motion link to the same Motion link and set its value to the value of the corresponding property of the Motion object value</li>
+</ol>
+<a id="md:by-using-this-library-programatically" class="tsd-anchor"></a><h3><a href="#md:by-using-this-library-programatically">By using this library programatically</a></h3><ul>
+<li><a href="https://deep-foundation.github.io/capacitor-motion/functions/requestMotionPermissions.html">Request permissions</a>  </li>
+<li><a href="https://deep-foundation.github.io/capacitor-motion/functions/saveMotionInfo.html">Save motion information</a>  </li>
+<li><a href="https://deep-foundation.github.io/capacitor-motion/functions/subscribeToAccelerationChanges.html">Subscribe to acceleration changes</a>  </li>
+<li><a href="https://deep-foundation.github.io/capacitor-motion/functions/subscribeToOrientationChanges.html">Subscribe to orientation changes</a></li>
+</ul>
+<a id="md:motion-object-value" class="tsd-anchor"></a><h2><a href="#md:motion-object-value">Motion Object Value</a></h2><p>The <code>Motion</code> link can have object value that can have following properties:</p>
+<ul>
+<li><strong>acceleration</strong> (type: Object): The acceleration exerted on the device. This object has three properties: x, y, and z representing the acceleration along the respective axes.</li>
+<li><strong>acceleration.x</strong> (type: Number): The acceleration along the x-axis, which is usually the horizontal left-right axis when the device is held in a standard orientation.</li>
+<li><strong>acceleration.y</strong> (type: Number): The acceleration along the y-axis, which is usually the vertical up-down axis when the device is held in a standard orientation.</li>
+<li><strong>acceleration.z</strong> (type: Number): The acceleration along the z-axis, which points out of the screen when the device is held in a standard orientation.</li>
+<li><strong>accelerationIncludingGravity</strong> (type: Object): The acceleration exerted on the device including the force of gravity. This object has three properties: x, y, and z representing the acceleration along the respective axes.</li>
+<li><strong>accelerationIncludingGravity.x</strong> (type: Number): The acceleration along the x-axis, including the force of gravity.</li>
+<li><strong>accelerationIncludingGravity.y</strong> (type: Number): The acceleration along the y-axis, including the force of gravity.</li>
+<li><strong>accelerationIncludingGravity.z</strong> (type: Number): The acceleration along the z-axis, including the force of gravity. This value will be close to -9.81 (the acceleration due to gravity) when the device is at rest.</li>
+<li><strong>rotationRate</strong> (type: Object): The rate of rotation around the device&#39;s x, y, and z axes. This object has three properties: alpha, beta, and gamma representing the rotation rate around the respective axes.</li>
+<li><strong>rotationRate.alpha</strong> (type: Number): The rotation rate around the alpha (z) axis, which points out of the screen when the device is held in a standard orientation. The rotation rate is measured in degrees per second.</li>
+<li><strong>rotationRate.beta</strong> (type: Number): The rotation rate around the beta (x) axis, which is usually the horizontal left-right axis when the device is held in a standard orientation. The rotation rate is measured in degrees per second.</li>
+<li><strong>rotationRate.gamma</strong> (type: Number): The rotation rate around the gamma (y) axis, which is usually the vertical up-down axis when the device is held in a standard orientation. The rotation rate is measured in degrees per second. </li>
+<li><strong>interval</strong> (type: Number): The interval between successive readings from the motion sensor in milliseconds.</li>
+</ul>
+<p>No one field is required. You can add any of these fields as you want</p>
+<a id="md:fake-object" class="tsd-anchor"></a><h3><a href="#md:fake-object">Fake Object</a></h3><pre><code class="language-json"><span class="hl-0">{</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;acceleration&quot;</span><span class="hl-0">: {</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;x&quot;</span><span class="hl-0">: </span><span class="hl-2">3.2</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;y&quot;</span><span class="hl-0">: </span><span class="hl-2">4.7</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;z&quot;</span><span class="hl-0">: </span><span class="hl-2">-9.8</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;accelerationIncludingGravity&quot;</span><span class="hl-0">: {</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;x&quot;</span><span class="hl-0">: </span><span class="hl-2">0.3</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;y&quot;</span><span class="hl-0">: </span><span class="hl-2">0.2</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;z&quot;</span><span class="hl-0">: </span><span class="hl-2">-9.8</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;rotationRate&quot;</span><span class="hl-0">: {</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;alpha&quot;</span><span class="hl-0">: </span><span class="hl-2">30</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;beta&quot;</span><span class="hl-0">: </span><span class="hl-2">60</span><span class="hl-0">,</span><br/><span class="hl-0">    </span><span class="hl-1">&quot;gamma&quot;</span><span class="hl-0">: </span><span class="hl-2">90</span><br/><span class="hl-0">  },</span><br/><span class="hl-0">  </span><span class="hl-1">&quot;interval&quot;</span><span class="hl-0">: </span><span class="hl-2">1000</span><br/><span class="hl-0">}</span>
+</code><button>Copy</button></pre>
+<a id="md:update-handling" class="tsd-anchor"></a><h2><a href="#md:update-handling">Update Handling</a></h2><p>This package contains a <code>HandleUpdate</code> that is used to handle updates of a value of instances of type <code>Motion</code>. <code>HandleUpdate</code> uses handler from <a href="https://www.npmjs.com/package/@freephoenix888/object-to-links-async-converter"><code>@freephoenix888/object-to-links-async-converter</code></a> to convert Motion object value to links on every update</p>
+<a id="md:contribution" class="tsd-anchor"></a><h2><a href="#md:contribution">Contribution</a></h2><p>Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.</p>
+</div></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -27,7 +66,27 @@
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
 <div class="tsd-theme-toggle">
-<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div></div>
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li>
+<ul>
+<li><a href="#md:how-to-use"><span>How to use?</span></a></li>
+<li>
+<ul>
+<li><a href="#md:prerequisitions"><span>Prerequisitions</span></a></li>
+<li>
+<ul>
+<li><a href="#md:by-using-deepclient-deepcaseprogrammatic"><span>By using <wbr/>Deep<wbr/>Client (<wbr/>Deep<wbr/>Case/programmatic)</span></a></li>
+<li><a href="#md:by-using-this-library-programatically"><span>By using this library programatically</span></a></li></ul></li>
+<li><a href="#md:motion-object-value"><span>Motion <wbr/>Object <wbr/>Value</span></a></li>
+<li>
+<ul>
+<li><a href="#md:fake-object"><span>Fake <wbr/>Object</span></a></li></ul></li>
+<li><a href="#md:update-handling"><span>Update <wbr/>Handling</span></a></li>
+<li><a href="#md:contribution"><span>Contribution</span></a></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>@deep-<wbr/>foundation/capacitor-<wbr/>motion</span></a>
 <ul class="tsd-small-nested-navigation">
