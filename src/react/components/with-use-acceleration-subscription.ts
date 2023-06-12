@@ -10,7 +10,7 @@ import { UseAccelerationSubscriptionParam, useAccelerationSubscription } from ".
 ```tsx
 function MyComponent(deep, deviceLinkId) {
    return deep.linkId && deviceLinkId ? 
-      <WithUseOrientationSubscription deep={deep} deviceLinkId={deviceLinkId} /> :
+      <WithUseAccelerationSubscription deep={deep} deviceLinkId={deviceLinkId} /> :
       null;
 }
 ```
