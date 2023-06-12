@@ -7,6 +7,7 @@ import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-par
  * Subscribes to orientation changes and saves them to Deep
  * 
  * @remarks
+ * Motion permissions should be granted before calling this function by using {@link requestMotionPermissions}
  * Orientation data is saved to Deep by using {@link saveMotionInfo}
  */
 export async function subscribeToOrientationChanges({
