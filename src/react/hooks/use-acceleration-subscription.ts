@@ -1,5 +1,5 @@
 import { Motion } from "@capacitor/motion";
-import { saveMotionInfo } from "../save-motion-info";
+import { saveMotionInfo } from "../../save-motion-info";
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
 
 export function useAccelerationSubscription(param:MotionSubscriptionParam) {
