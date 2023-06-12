@@ -15,6 +15,8 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 2.  Change its object value to the object with propertied described in [Motion Object Value](#md:motion-object-value)  
 or  
 Insert a link of any type with any property name from [Motion Object Value](#md:motion-object-value) from Motion link to the same Motion link and set its value to the value of the corresponding property of the Motion object value
+![image](https://github.com/deep-foundation/capacitor-motion/assets/66206278/c249d2e9-c76a-4540-8793-93d42d17afd7)
+
 
 
 ### By using this library programatically
