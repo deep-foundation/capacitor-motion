@@ -56,7 +56,9 @@ const accelerationListener = await Motion.addListener(
     await saveMotionInfo({
       deep,
       deviceLinkId,
-      info: orientationData,
+      info: {
+        rotationRate: orientationData,
+      },
     });
   }
 );
