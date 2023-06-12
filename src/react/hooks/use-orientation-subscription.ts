@@ -1,6 +1,7 @@
 import { Motion } from "@capacitor/motion";
 import { saveMotionInfo } from "../../save-motion-info";
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
+import { useEffect } from "react";
 
 /**
  * This hook subscribes to the orientation event and saves the data to Deep
@@ -10,15 +11,22 @@ import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
  */
 export function useOrientationSubscription(param:UseOrientationSubscriptionParam) {
    const { deep, deviceLinkId } = param;
-   Motion.addListener('orientation', async (orientationData) => {
-      await saveMotionInfo({
-        deep,
-        deviceLinkId,
-        info: {
-         rotationRate: orientationData
-        },
-      });
-    });
+
+    useEffect(() => {
+      const orientationHandler = Motion.addListener('orientation', async (orientationData) => {
+         await saveMotionInfo({
+           deep,
+           deviceLinkId,
+           info: {
+            rotationRate: orientationData
+           },
+         });
+       });
+
+      return () => {
+         orientationHandler.remove();
+      }
+   }, [deep, deviceLinkId]) 
 }
 
 export interface UseOrientationSubscriptionParam {
