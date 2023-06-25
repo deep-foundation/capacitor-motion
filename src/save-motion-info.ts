@@ -2,7 +2,7 @@ import {
   DeepClient,
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client';
-import { MOTION_PACKAGE_NAME } from './package-name';
+import { PACKAGE_NAME } from './package-name';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
@@ -166,7 +166,7 @@ export async function saveMotionInfo(
   }): Promise<Link<number> | undefined> {
     const selectData: BoolExpLink = {
       type_id: {
-        _id: [MOTION_PACKAGE_NAME, 'Motion'],
+        _id: [PACKAGE_NAME, 'Motion'],
       },
       from_id: deviceLinkId,
       to_id: deviceLinkId,
@@ -195,7 +195,7 @@ export async function saveMotionInfo(
       type: 'insert',
       objects: {
         id: motionLinkId,
-        type_id: await deep.id(MOTION_PACKAGE_NAME, 'Motion'),
+        type_id: await deep.id(PACKAGE_NAME, 'Motion'),
         from_id: deviceLinkId,
         to_id: deviceLinkId,
         in: {
