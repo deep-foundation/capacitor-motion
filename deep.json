@@ -1,75 +1,80 @@
 {
   "package": {
     "name": "@deep-foundation/capacitor-motion",
-    "version": "0.0.11"
+    "version": "1.0.0"
   },
   "data": [
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Config"
+        "containValue": "Type"
       },
       "id": 1
     },
     {
       "package": {
         "dependencyId": 1,
-        "containValue": "Type"
+        "containValue": "Device"
       },
       "id": 2
     },
     {
       "package": {
-        "dependencyId": 1,
-        "containValue": "Value"
+        "dependencyId": 2,
+        "containValue": "Config"
       },
       "id": 3
     },
     {
       "package": {
-        "dependencyId": 1,
-        "containValue": "Number"
+        "dependencyId": 0,
+        "containValue": "HandleUpdate"
       },
       "id": 4
     },
     {
       "package": {
-        "dependencyId": 1,
-        "containValue": "HandleUpdate"
+        "dependencyId": 2,
+        "containValue": "UpdateHandler"
       },
       "id": 5
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "UpdateHandler"
+        "containValue": "Value"
       },
       "id": 6
     },
     {
       "package": {
-        "dependencyId": 1,
-        "containValue": "Object"
+        "dependencyId": 0,
+        "containValue": "Number"
       },
       "id": 7
     },
     {
       "package": {
-        "dependencyId": 1,
-        "containValue": "Any"
+        "dependencyId": 0,
+        "containValue": "Object"
       },
       "id": 8
     },
     {
-      "package": {
-        "dependencyId": 2,
-        "containValue": "Device"
-      },
-      "id": 9
+      "id": "MotionRotationRateGamma",
+      "type": 1,
+      "from": "MotionRotationRate",
+      "to": "MotionRotationRate"
+    },
+    {
+      "id": "Motion",
+      "type": 1,
+      "from": 2,
+      "to": 2
     },
     {
       "id": "ConfigFor@freephoenix888/object-to-links-async-converter",
-      "type": 1,
+      "type": 3,
       "value": {
         "value": {
           "addTypeNameToPropertyName": true
@@ -77,211 +82,199 @@
       }
     },
     {
-      "id": "MotionAccelerationIncludingGravityZ",
-      "type": 2,
-      "from": "MotionAccelerationIncludingGravity",
-      "to": "MotionAccelerationIncludingGravity"
-    },
-    {
-      "id": "TypeOfValueOfMotionAccelerationIncludingGravityZ",
-      "type": 3,
-      "from": "MotionAccelerationIncludingGravityZ",
-      "to": 4
-    },
-    {
-      "id": "MotionAccelerationIncludingGravity",
-      "type": 2,
-      "from": "Motion",
-      "to": "Motion"
-    },
-    {
-      "id": "HandleMotionAccelerationIncludingGravityUpdate",
-      "type": 5,
-      "from": "MotionAccelerationIncludingGravity",
-      "to": 6
-    },
-    {
-      "id": "MotionAccelerationIncludingGravityY",
-      "type": 2,
-      "from": "MotionAccelerationIncludingGravity",
-      "to": "MotionAccelerationIncludingGravity"
-    },
-    {
-      "id": "TypeOfValueOfMotionAccelerationIncludingGravityY",
-      "type": 3,
-      "from": "MotionAccelerationIncludingGravityY",
-      "to": 4
-    },
-    {
-      "id": "MotionAccelerationIncludingGravityX",
-      "type": 2,
-      "from": "MotionAccelerationIncludingGravity",
-      "to": "MotionAccelerationIncludingGravity"
-    },
-    {
-      "id": "TypeOfValueOfMotionAccelerationIncludingGravityX",
-      "type": 3,
-      "from": "MotionAccelerationIncludingGravityX",
-      "to": 4
-    },
-    {
-      "id": "TypeOfValueOfMotionAccelerationIncludingGravity",
-      "type": 3,
-      "from": "MotionAccelerationIncludingGravity",
-      "to": 7
-    },
-    {
-      "id": "MotionAccelerationY",
-      "type": 2,
-      "from": "MotionAcceleration",
-      "to": "MotionAcceleration"
-    },
-    {
-      "id": "TypeOfValueOfMotionAccelerationY",
-      "type": 3,
-      "from": "MotionAccelerationY",
-      "to": 4
-    },
-    {
-      "id": "MotionRotationRateGamma",
-      "type": 2,
-      "from": "MotionRotationRate",
-      "to": "MotionRotationRate"
-    },
-    {
-      "id": "TypeOfValueOfMotionRotationRateGamma",
-      "type": 3,
-      "from": "MotionRotationRateGamma",
-      "to": 4
-    },
-    {
-      "id": "MotionRotationRateAlpha",
-      "type": 2,
-      "from": "MotionRotationRate",
-      "to": "MotionRotationRate"
-    },
-    {
-      "id": "TypeOfValueOfMotionRotationRateAlpha",
-      "type": 3,
-      "from": "MotionRotationRateAlpha",
-      "to": 4
-    },
-    {
-      "id": "Motion",
-      "type": 2,
-      "from": 9,
-      "to": 9
-    },
-    {
       "id": "HandleMotionUpdate",
-      "type": 5,
+      "type": 4,
       "from": "Motion",
-      "to": 6
+      "to": 5
     },
     {
       "id": "MotionAcceleration",
-      "type": 2,
+      "type": 1,
       "from": "Motion",
       "to": "Motion"
     },
     {
       "id": "MotionAccelerationZ",
-      "type": 2,
+      "type": 1,
       "from": "MotionAcceleration",
       "to": "MotionAcceleration"
     },
     {
+      "id": "TypeOfValueOfMotionAccelerationZ",
+      "type": 6,
+      "from": "MotionAccelerationZ",
+      "to": 7
+    },
+    {
       "id": "MotionAccelerationX",
-      "type": 2,
+      "type": 1,
       "from": "MotionAcceleration",
       "to": "MotionAcceleration"
     },
     {
       "id": "TypeOfValueOfMotionAccelerationX",
-      "type": 3,
+      "type": 6,
       "from": "MotionAccelerationX",
-      "to": 4
-    },
-    {
-      "id": "TypeOfValueOfMotionAcceleration",
-      "type": 3,
-      "from": "MotionAcceleration",
       "to": 7
     },
     {
+      "id": "TypeOfValueOfMotionAcceleration",
+      "type": 6,
+      "from": "MotionAcceleration",
+      "to": 8
+    },
+    {
+      "id": "HandleMotionAccelerationUpdate",
+      "type": 4,
+      "from": "MotionAcceleration",
+      "to": 5
+    },
+    {
       "id": "MotionInterval",
-      "type": 2,
+      "type": 1,
       "from": "Motion",
       "to": "Motion"
     },
     {
       "id": "TypeOfValueOfInterval",
-      "type": 3,
+      "type": 6,
       "from": "MotionInterval",
-      "to": 4
-    },
-    {
-      "id": "TypeOfValueOfMotion",
-      "type": 3,
-      "from": "Motion",
       "to": 7
     },
     {
+      "id": "TypeOfValueOfMotion",
+      "type": 6,
+      "from": "Motion",
+      "to": 8
+    },
+    {
       "id": "MotionRotationRate",
-      "type": 2,
+      "type": 1,
       "from": "Motion",
       "to": "Motion"
     },
     {
-      "id": "HandleMotionRotationRateUpdate",
-      "type": 5,
+      "id": "MotionRotationRateAlpha",
+      "type": 1,
       "from": "MotionRotationRate",
-      "to": 6
+      "to": "MotionRotationRate"
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRateAlpha",
+      "type": 6,
+      "from": "MotionRotationRateAlpha",
+      "to": 7
+    },
+    {
+      "id": "HandleMotionRotationRateUpdate",
+      "type": 4,
+      "from": "MotionRotationRate",
+      "to": 5
     },
     {
       "id": "MotionRotationRateBeta",
-      "type": 2,
+      "type": 1,
       "from": "MotionRotationRate",
       "to": "MotionRotationRate"
     },
     {
       "id": "TypeOfValueOfMotionRotationRateBeta",
-      "type": 3,
+      "type": 6,
       "from": "MotionRotationRateBeta",
-      "to": 4
-    },
-    {
-      "id": "TypeOfValueOfMotionRotationRate",
-      "type": 3,
-      "from": "MotionRotationRate",
       "to": 7
     },
     {
-      "id": "HandleMotionAccelerationUpdate",
-      "type": 5,
-      "from": "MotionAcceleration",
-      "to": 6
+      "id": "TypeOfValueOfMotionRotationRate",
+      "type": 6,
+      "from": "MotionRotationRate",
+      "to": 8
     },
     {
-      "id": "TypeOfValueOfMotionAccelerationZ",
-      "type": 3,
-      "from": "MotionAccelerationZ",
-      "to": 4
+      "id": "TypeOfValueOfMotionAccelerationY",
+      "type": 6,
+      "from": "MotionAccelerationY",
+      "to": 7
+    },
+    {
+      "id": "MotionAccelerationIncludingGravity",
+      "type": 1,
+      "from": "Motion",
+      "to": "Motion"
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityZ",
+      "type": 1,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityZ",
+      "type": 6,
+      "from": "MotionAccelerationIncludingGravityZ",
+      "to": 7
+    },
+    {
+      "id": "HandleMotionAccelerationIncludingGravityUpdate",
+      "type": 4,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": 5
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityY",
+      "type": 1,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityY",
+      "type": 6,
+      "from": "MotionAccelerationIncludingGravityY",
+      "to": 7
+    },
+    {
+      "id": "MotionAccelerationIncludingGravityX",
+      "type": 1,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": "MotionAccelerationIncludingGravity"
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravityX",
+      "type": 6,
+      "from": "MotionAccelerationIncludingGravityX",
+      "to": 7
+    },
+    {
+      "id": "TypeOfValueOfMotionAccelerationIncludingGravity",
+      "type": 6,
+      "from": "MotionAccelerationIncludingGravity",
+      "to": 8
+    },
+    {
+      "id": "MotionAccelerationY",
+      "type": 1,
+      "from": "MotionAcceleration",
+      "to": "MotionAcceleration"
+    },
+    {
+      "id": "TypeOfValueOfMotionRotationRateGamma",
+      "type": 6,
+      "from": "MotionRotationRateGamma",
+      "to": 7
     }
   ],
   "errors": [],
   "dependencies": [
     {
-      "name": "@freephoenix888/object-to-links-async-converter",
-      "version": "0.0.10"
-    },
-    {
       "name": "@deep-foundation/core",
       "version": "0.0.2"
     },
     {
-      "name": "@deep-foundation/capacitor-device",
-      "version": "1.0.0"
+      "name": "@deep-foundation/device",
+      "version": "1.0.1"
+    },
+    {
+      "name": "@freephoenix888/object-to-links-async-converter",
+      "version": "0.0.10"
     }
   ]
 }

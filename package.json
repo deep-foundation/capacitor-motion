@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/deep-foundation/capacitor-motion"
   },
-  "version": "0.0.11",
+  "version": "1.0.0",
   "scripts": {
     "build": "fse remove dist && tsc",
     "npm-pull": "npm-pull",
@@ -23,6 +23,7 @@
   "dependencies": {
     "@deep-foundation/capacitor-device": "^4.0.2",
     "@deep-foundation/core": "^0.0.2",
+    "@deep-foundation/device": "~1.0.1",
     "@freephoenix888/object-to-links-async-converter": "^0.0.10"
   },
   "peerDependencies": {
