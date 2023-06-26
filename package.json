@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/deep-foundation/capacitor-motion"
   },
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "build": "fse remove dist && tsc",
     "npm-pull": "npm-pull",
