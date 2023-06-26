@@ -6,7 +6,7 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 
 [**Documentation**](https://deep-foundation.github.io/capacitor-motion/)
 
-[**List of links**](https://deep-foundation.github.io/firebase-push-notification/enums/LinkName.html)
+[**List of links**](https://deep-foundation.github.io/capacitor-motion/enums/LinkName.html)
 
 ## Prerequisitions
 
