@@ -13,12 +13,12 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 - Install this package in your deep by using npm-packager
 - Give permissions to this package
 
-## Device Object Value
+## Motion Object Value
 
 The [`Motion`] link can have object value.  
 No one field is required. You can add any fields as you want. Only the fields that are supported by this package will be represented as links  
 - [**Supported fields can be found in the `Motion` interface**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html)  
-- [**Example of Motion Object Value**](https://deep-foundation.github.io/capacitor-motion/types/deviceInfo.html#md:motion-info-example)
+- [**Example of Motion Object Value**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html#md:motion-info-example)
 
 ## How to use?
 
