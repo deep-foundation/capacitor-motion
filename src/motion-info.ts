@@ -2,6 +2,7 @@ import { AccelListenerEvent } from "@capacitor/motion";
 
 /**
  * @example
+ * #### Motion Info Example
 ```ts
 const motionInfo: MotionInfo = {
   "acceleration": {
