@@ -1,13 +1,13 @@
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
-import { PACKAGE_NAME } from './package-name';
-import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
+} from '@deep-foundation/deeplinks/imports/client.js';
+import { PACKAGE_NAME } from './package-name.js';
+import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
-import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
-import { MotionInfo } from './motion-info';
+import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types.js';
+import { MotionInfo } from './motion-info.js';
 
   /**
    * Saves {@link SaveMotionInfoParam.info} to the value of a link of type `Motion` which from and to will be {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed

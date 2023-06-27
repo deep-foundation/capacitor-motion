@@ -1,7 +1,7 @@
 import { Motion } from '@capacitor/motion';
-import { saveMotionInfo } from './save-motion-info';
-import { DeepClient } from '@deep-foundation/deeplinks/imports/client';
-import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param';
+import { saveMotionInfo } from './save-motion-info.js';
+import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
+import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param.js';
 
 /**
  * Subscribes to acceleration changes and saves them to Deep
