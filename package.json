@@ -9,6 +9,7 @@
     "url": "https://github.com/deep-foundation/capacitor-motion"
   },
   "version": "1.2.6",
+  "type": "module",
   "scripts": {
     "build": "fse remove dist && tsc",
     "npm-pull": "npm-pull",
@@ -35,7 +36,7 @@
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.7",
     "@capacitor/cli": "^5.0.0",
-    "@deep-foundation/npm-automation": "^1.1.1",
+    "@deep-foundation/npm-automation": "^1.1.2",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
     "fs-extra": "^11.1.1",
