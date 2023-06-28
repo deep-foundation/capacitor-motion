@@ -7,6 +7,7 @@ import {
  import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
+import { DeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
  
  /**
    * Gets serial operations to insert Device
