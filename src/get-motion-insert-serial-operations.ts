@@ -168,7 +168,8 @@ export interface GetMotionInsertSerialOperationsParam {
    *
    * @remarks
    * If it is null, contain link will not be created
-   * If it is undefined or not provided, it will be the {@link GetMotionInsertSerialOperationsParam.deep.linkId}
+   * 
+   * @defaultValue {@link GetMotionInsertSerialOperationsParam.deep.linkId} if it is undefined or not provided
    */
   containerLinkId?: number | undefined | null;
   /**
