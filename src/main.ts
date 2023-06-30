@@ -1,5 +1,6 @@
 export {PACKAGE_NAME} from './package-name.js'
-export {getMotionValueUpdateSerialOperations} from './get-motion-value-update-serial-operations.js'
+export {getMotionInsertSerialOperations, type GetMotionInsertSerialOperationsParam} from './get-motion-insert-serial-operations.js'
+export {getMotionValueUpdateSerialOperations, type SaveMotionInfoParam} from './get-motion-value-update-serial-operationsa.js'
 export {type MotionInfo} from './motion-info.js'
 export {requestMotionPermissions} from './request-motion-permissions.js'
 export {subscribeToAccelerationChanges} from './subscribe-to-acceleration-changes.js'

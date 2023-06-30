@@ -8,17 +8,17 @@ import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types.js';
 import { MotionInfo } from './motion-info.js';
+import createDebugMessages from 'debug';
 
-  /**
-   * Saves {@link SaveMotionInfoParam.info} to the value of a link of type `Motion` which from and to will be {@link SaveMotionInfoParam.deviceLink} or {@link SaveMotionInfoParam.deviceLinkId} depending on which one is passed
+/**
+   * Updates value of {@link SaveMotionInfoParam.motionLink} or {@link SaveMotionInfoParam.motionLinkId} to {@link SaveMotionInfoParam.info}
    * 
    * @remarks
-   * After value of Motion link is updated, a handler from `@freephoenix888/object-to-links-async-converter` will create links to represent the value
+   * After update, the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) will create links to represent the value
    * 
-   * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
-   * @throws if {@link deviceLink} is passed but it does not exist
-   * @throws if {@link deviceLinkId} is passed but it does not exist
-   * @throws if both {@link deviceLink} and {@link deviceLinkId} are passed
+   * @throws if neither {@link motionLink} nor {@link motionLinkId} is passed
+   * @throws if {@link motionLinkId} is passed but it does not exist
+   * @throws if both {@link motionLink} and {@link motionLinkId} are passed
    * 
    * @example
    * #### Save Motion Info
@@ -45,7 +45,7 @@ let info = {
 const serialOperations = await getMotionValueUpdateSerialOperations({
   deep,
   info,
-  deviceLinkId
+  motionLinkId
 });
 
 await deep.serial({
@@ -54,101 +54,76 @@ await deep.serial({
 ```
    */
 export async function getMotionValueUpdateSerialOperations(
-  params: SaveMotionInfoParam
+  param: SaveMotionInfoParam
 ): Promise<Array<SerialOperation>> {
-  const info = await removeRedundantFieldsFromMotionInfo({ info: params.info });
-
-  console.log({ params });
-  const { deep } = params;
   const serialOperations: Array<SerialOperation> = [];
-  let deviceLink = await getDeviceLink();
-  let motionLinkId: number;
-  let value: MotionInfo | undefined;
-  const motionLink = await getMotionLinkOrUndefined({
-    deviceLinkId: deviceLink.id,
-  });
-  if (motionLink) {
-    motionLinkId = motionLink.id;
-    value = motionLink.value?.value;
-  } else {
-    const reservedLinkIds = await deep.reserve(1);
-    motionLinkId = reservedLinkIds.pop()!;
+  const debug = createDebugMessages(
+    `${PACKAGE_NAME}:getMotionValueUpdateSerialOperations`
+  );
+  debug({ param });
+  const { deep } = param;
+
+  const info = await removeRedundantFieldsFromMotionInfo({ info: param.info });
+  debug({ info });
+
+  let motionLink = await getMotionLink();
+  debug({ motionLink });
+
+  if (motionLink.value) {
     serialOperations.push(
-      await getMotionLinkInsertSerialOperation({
-        deviceLinkId: deviceLink.id,
-        motionLinkId,
+      await getMotionLinkValueUpdateSerialOperation({
+        motionLinkId: motionLink.id,
+        info,
+      })
+    );
+  } else {
+    serialOperations.push(
+      await getMotionLinkValueInsertSerialOperation({
+        motionLinkId: motionLink.id,
+        info,
       })
     );
   }
-  if (value) {
-    serialOperations.push(
-      await getMotionLinkValueUpdateSerialOperation({ motionLinkId })
-    );
-  } else {
-    serialOperations.push(
-      await getMotionLinkValueInsertSerialOperation({ motionLinkId })
-    );
-  }
 
-  console.log({ serialOperations });
-  return serialOperations
+  debug({ serialOperations });
+  return serialOperations;
 
   /**
-   * Gets link of type {@link Device} 
-   * 
-   * @throws if neither {@link deviceLink} nor {@link deviceLinkId} is passed
-   * @throws if {@link deviceLink} is passed but it does not exist
-   * @throws if {@link deviceLinkId} is passed but it does not exist
+   * Gets link of type {@link Device}
+   *
+   * @throws if neither {@link motionLink} nor {@link motionLinkId} is passed
+   * @throws if {@link motionLink} is passed but it does not exist
+   * @throws if {@link motionLinkId} is passed but it does not exist
    */
-  async function getDeviceLink() {
-    let deviceLink: Link<number>;
-    if('deviceLinkId' in params && 'deviceLink' in params) {
-      throw new Error(`Both deviceLinkId and deviceLink are passed. Either deviceLink or deviceLinkId must be passed`)
-    } else if ('deviceLinkId' in params) {
+  async function getMotionLink() {
+    const debug = createDebugMessages(
+      `${PACKAGE_NAME}:getMotionValueUpdateSerialOperations:getMotionLink`
+    );
+    let motionLink: Link<number>;
+    if ('motionLinkId' in param && 'motionLink' in param) {
+      throw new Error(
+        `Both motionLinkId and motionLink are passed. Either motionLink or motionLinkId must be passed`
+      );
+    } else if ('motionLinkId' in param) {
       const { data } = await deep.select({
-        id: params.deviceLinkId,
+        id: param.motionLinkId,
       });
-      deviceLink = data[0];
-    } else if ('deviceLink' in params) {
-      deviceLink = params.deviceLink;
+      motionLink = data[0];
+    } else if ('motionLink' in param) {
+      motionLink = param.motionLink;
     } else {
-      throw new Error(`Either deviceLink or deviceLinkId must be passed`);
+      throw new Error(`Either motionLink or motionLinkId must be passed`);
     }
-    return deviceLink;
-  }
-
-  /**
-   * Gets link of type {@link Motion} with id {@link motionLinkId} or undefined if it does not exist
-   */
-  async function getMotionLinkOrUndefined({
-    deviceLinkId,
-  }: {
-    deviceLinkId: number;
-  }): Promise<Link<number> | undefined> {
-    const selectData: BoolExpLink = {
-      type_id: {
-        _id: [PACKAGE_NAME, 'Motion'],
-      },
-      from_id: deviceLinkId,
-      to_id: deviceLinkId,
-    };
-    const {
-      data: [motionLink],
-    } = await deep.select(selectData);
-    // if (!motionLink) {
-    //   throw new Error(`Select with data ${selectData} return empty result`)
-    // }
+    debug({ motionLink });
     return motionLink;
   }
 
   /**
-   * Gets serial operation that inserts link of type {@link Motion} with id {@link motionLinkId} to {@link deviceLinkId}
+   * Gets serial operation that inserts link of type {@link Motion} with id {@link motionLinkId} to {@link motionLinkId}
    */
   async function getMotionLinkInsertSerialOperation({
-    deviceLinkId,
     motionLinkId,
   }: {
-    deviceLinkId: number;
     motionLinkId: number;
   }) {
     return createSerialOperation({
@@ -157,12 +132,12 @@ export async function getMotionValueUpdateSerialOperations(
       objects: {
         id: motionLinkId,
         type_id: await deep.id(PACKAGE_NAME, 'Motion'),
-        from_id: deviceLinkId,
-        to_id: deviceLinkId,
+        from_id: motionLinkId,
+        to_id: motionLinkId,
         in: {
           data: {
             type_id: await deep.id('@deep-foundation/core', 'Contain'),
-            from_id: deviceLinkId,
+            from_id: motionLinkId,
             string: {
               data: {
                 value: 'Motion',
@@ -179,8 +154,10 @@ export async function getMotionValueUpdateSerialOperations(
    */
   async function getMotionLinkValueInsertSerialOperation({
     motionLinkId,
+    info,
   }: {
     motionLinkId: number;
+    info: MotionInfo;
   }) {
     return createSerialOperation({
       table: 'objects',
@@ -197,8 +174,10 @@ export async function getMotionValueUpdateSerialOperations(
    */
   async function getMotionLinkValueUpdateSerialOperation({
     motionLinkId,
+    info,
   }: {
     motionLinkId: number;
+    info: MotionInfo;
   }) {
     return createSerialOperation({
       table: 'objects',
@@ -215,7 +194,11 @@ export async function getMotionValueUpdateSerialOperations(
   /**
    * Removes redundant fields from an object of type {@link MotionInfo} because they contain extra fields that are not specified in their typescript interface
    */
-  async function removeRedundantFieldsFromMotionInfo({ info }: { info: Partial<MotionInfo> }): Promise<Partial<MotionInfo>> {
+  async function removeRedundantFieldsFromMotionInfo({
+    info,
+  }: {
+    info: Partial<MotionInfo>;
+  }): Promise<Partial<MotionInfo>> {
     // capacitor-motion actually actually pass to us object with extra fields that are not specified in their typescript interface
     return {
       ...('acceleration' in info
@@ -250,7 +233,7 @@ export async function getMotionValueUpdateSerialOperations(
   }
 }
 
-export type SaveMotionInfoParam = { deep: DeepClient; info: Partial<MotionInfo> } & (
-  | { deviceLinkId: number }
-  | { deviceLink: Link<number> }
-);
+export type SaveMotionInfoParam = {
+  deep: DeepClient;
+  info: Partial<MotionInfo>;
+} & ({ motionLinkId: number } | { motionLink: Link<number> });

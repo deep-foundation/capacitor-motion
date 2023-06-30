@@ -1,5 +1,5 @@
 import { Motion } from "@capacitor/motion";
-import { getMotionValueUpdateSerialOperations } from "../../get-motion-value-update-serial-operations";
+import { getMotionValueUpdateSerialOperations } from "../../get-motion-value-update-serial-operationsa";
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
 import { useEffect } from "react";
 
