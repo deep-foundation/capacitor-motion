@@ -11,7 +11,7 @@ import { MotionInfo } from './motion-info.js';
 import createDebugMessages from 'debug';
 
 /**
-   * Updates value of {@link SaveMotionInfoParam.motionLink} or {@link SaveMotionInfoParam.motionLinkId} to {@link SaveMotionInfoParam.info}
+   * Updates value of {@link GetMotionValueUpdateSerialOperationsParam.motionLink} or {@link GetMotionValueUpdateSerialOperationsParam.motionLinkId} to {@link GetMotionValueUpdateSerialOperationsParam.info}
    * 
    * @remarks
    * After update, the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) will create links to represent the value
@@ -54,7 +54,7 @@ await deep.serial({
 ```
    */
 export async function getMotionValueUpdateSerialOperations(
-  param: SaveMotionInfoParam
+  param: GetMotionValueUpdateSerialOperationsParam
 ): Promise<Array<SerialOperation>> {
   const serialOperations: Array<SerialOperation> = [];
   const debug = createDebugMessages(
@@ -233,7 +233,7 @@ export async function getMotionValueUpdateSerialOperations(
   }
 }
 
-export type SaveMotionInfoParam = {
+export type GetMotionValueUpdateSerialOperationsParam = {
   deep: DeepClient;
   info: Partial<MotionInfo>;
 } & ({ motionLinkId: number } | { motionLink: Link<number> });

@@ -32,7 +32,8 @@ No one field is required. You can add any fields as you want. Only the fields th
 ### By using library of this package
 
 - [Request permissions](https://deep-foundation.github.io/capacitor-motion/functions/requestMotionPermissions.html)
-- [Save motion information](https://deep-foundation.github.io/capacitor-motion/functions/saveMotionInfo.html)
+- [Get motion insert serial operations](https://deep-foundation.github.io/capacitor-motion/functions/getMotionInsertSerialOperations.html)
+- [Get motion value update serial operations](https://deep-foundation.github.io/capacitor-motion/functions/getMotionValueUpdateSerialOperations.html)
 - [Subscribe to acceleration changes](https://deep-foundation.github.io/capacitor-motion/functions/subscribeToAccelerationChanges.html)
 - [Subscribe to orientation changes](https://deep-foundation.github.io/capacitor-motion/functions/subscribeToOrientationChanges.html)
 
