@@ -8,91 +8,93 @@ import {
 import { MutationInputValue } from '@deep-foundation/deeplinks/imports/client_types';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks';
 import { DeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device';
+import { MotionInfo } from './motion-info';
  
  /**
-   * Gets serial operations to insert Device
+   * Gets serial operations to update Motion value
    * 
    * @example
   ```ts
-  const serialOperations = await getDeviceValueInsertSerialOperations({
-    deep
+  const serialOperations = await getMotionValueUpdateSerialOperations({
+    deep,
+    info
   });
   await deep.serial({
     operations: serialOperations
   })
   ```
    */
- export async function getDeviceValueInsertSerialOperations(
-   param: GetDeviceValueUpdateSerialOperationsParam
+ export async function getMotionValueUpdateSerialOperations(
+   param: GetMotionValueUpdateSerialOperationsParam
  ): Promise<Array<SerialOperation>> {
    const { deep, info } = param;
 
-   const deviceLink = await getDeviceLink();
+   const motionLink = await getMotionLink();
  
    const value = await getValue({
-     deviceLink,
+    motionLink,
      data: info,
    });
  
    const serialOperations = await getSerialOperations({
-     deviceLink,
+     motionLink,
      value,
    });
 
    return serialOperations;
  
-   async function getDeviceLink() {
-     let deviceLink: Link<number>;
+   async function getMotionLink() {
+     let motionLink: Link<number>;
  
-     if ('deviceLinkId' in param) {
-       if (!param.deviceLinkId) {
-         throw new Error(`deviceLinkId is undefined`);
+     if ('motionLinkId' in param) {
+       if (!param.motionLinkId) {
+         throw new Error(`motionLinkId is undefined`);
        }
        const { data } = await deep.select({
-         id: param.deviceLinkId,
+         id: param.motionLinkId,
        });
-       deviceLink = data[0];
-     } else if ('deviceLink' in param) {
-       if (!param.deviceLink) {
-         throw new Error(`deviceLink is undefined`);
+       motionLink = data[0];
+     } else if ('motionLink' in param) {
+       if (!param.motionLink) {
+         throw new Error(`motionLink is undefined`);
        }
-       deviceLink = param.deviceLink;
+       motionLink = param.motionLink;
      } else {
-       throw new Error(`Either deviceLink or deviceLinkId must be passed`);
+       throw new Error(`Either motionLink or motionLinkId must be passed`);
      }
  
-     return deviceLink;
+     return motionLink;
    }
  
    async function getValueInsertSerialOperation({
-     deviceLink,
+     motionLink,
      value,
    }: {
-     deviceLink: Link<number>;
+     motionLink: Link<number>;
      value: MutationInputValue<object>['value'];
    }) {
      return createSerialOperation({
        table: 'objects',
        type: 'insert',
        objects: {
-         link_id: deviceLink.id,
+         link_id: motionLink.id,
          value: value,
        },
      });
    }
  
    async function getValueUpdateSerialOperation({
-     deviceLink,
+     motionLink,
      value,
    }: {
-     deviceLink: Link<number>;
+     motionLink: Link<number>;
      value: MutationInputValue<object>['value'];
    }) {
      return createSerialOperation({
        table: 'objects',
        type: 'update',
        exp: {
-         link_id: deviceLink.id,
+         link_id: motionLink.id,
        },
        value: {
          value: value,
@@ -101,37 +103,37 @@ import { DeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device'
    }
  
    async function getValue({
-     deviceLink,
+    motionLink,
      data,
    }: {
-     deviceLink: Link<number>;
-     data: Partial<DeviceInfo> | undefined;
-   }) {
+     motionLink: Link<number>;
+     data: GetMotionValueUpdateSerialOperationsParam['info'];
+   }): Promise<MutationInputValue<object>['value']> {
      return {
-       ...(deviceLink.value?.value ?? {}),
-       ...(data ?? (await getAllDeviceInfo())),
-     } as MutationInputValue<object>['value'];
+       ...(motionLink.value?.value ?? {}),
+       ...(data),
+     };
    }
  
    async function getSerialOperations({
-     deviceLink,
+     motionLink,
      value,
    }: {
-     deviceLink: Link<number>;
+     motionLink: Link<number>;
      value: MutationInputValue<object>['value'];
    }) {
      let serialOperations: Array<SerialOperation> = [];
-     if (!deviceLink.value) {
+     if (!motionLink.value) {
        serialOperations.push(
          await getValueUpdateSerialOperation({
-           deviceLink,
+           motionLink,
            value,
          })
        );
      } else {
        serialOperations.push(
          await getValueInsertSerialOperation({
-           deviceLink,
+           motionLink,
            value,
          })
        );
@@ -140,30 +142,27 @@ import { DeviceInfo, getAllDeviceInfo } from '@deep-foundation/capacitor-device'
    }
  }
  
- export type GetDeviceValueUpdateSerialOperationsParam = {
+ export type GetMotionValueUpdateSerialOperationsParam = {
    /**
     * DeepClient
     */
    deep: DeepClient;
    /**
-    * Device Info
-    * 
-    * @remarks
-    * If not passed then {@link getAllDeviceInfo} is used to get the device info
+    * Motion Info
     */
-   info?: DeviceInfo;
+   info: MotionInfo;
  } & (
    | { 
       /**
        * Device Link Id
        */
-      deviceLinkId: number 
+      motionLinkId: number 
    }
    | { 
       /**
        * Device Link
        */
-      deviceLink: Link<number> 
+      motionLink: Link<number> 
    }
  )
  
