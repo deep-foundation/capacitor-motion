@@ -24,4 +24,4 @@ const motionInfo: MotionInfo = {
 }
 ```
  */
-export type MotionInfo = AccelListenerEvent;
+export type MotionInfo = Partial<AccelListenerEvent>;

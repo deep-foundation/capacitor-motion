@@ -1,5 +1,5 @@
 export {PACKAGE_NAME} from './package-name.js'
-export {saveMotionInfo} from './save-motion-info.js'
+export {getMotionValueUpdateSerialOperations} from './get-motion-value-update-serial-operations.js'
 export {type MotionInfo} from './motion-info.js'
 export {requestMotionPermissions} from './request-motion-permissions.js'
 export {subscribeToAccelerationChanges} from './subscribe-to-acceleration-changes.js'

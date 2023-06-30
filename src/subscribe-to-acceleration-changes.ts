@@ -1,5 +1,5 @@
 import { Motion } from '@capacitor/motion';
-import { saveMotionInfo } from './save-motion-info.js';
+import { getMotionValueUpdateSerialOperations } from './get-motion-value-update-serial-operations.js';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
 import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param.js';
 
@@ -8,7 +8,18 @@ import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-par
  * 
  * @remarks
  * Motion permissions should be granted before calling this function by using {@link requestMotionPermissions}
- * Acceleration data is saved to Deep by using {@link saveMotionInfo}
+ * Acceleration data is saved to Deep by using {@link getMotionValueUpdateSerialOperations}
+ * 
+ * @example
+```ts
+#### Subscribe to acceleration changes
+```ts
+const accelerationHandler = await subscribeToAccelerationChanges({
+  deep,
+  deviceLinkId,
+});
+```
+```
  */
 export async function subscribeToAccelerationChanges({
   deep,
@@ -17,10 +28,13 @@ export async function subscribeToAccelerationChanges({
   console.log('subscribeToAccelerationChanges');
   return Motion.addListener('accel', async (accelData) => {
     console.log('accelEvent', accelData);
-    await saveMotionInfo({
+    const serialOperations = await getMotionValueUpdateSerialOperations({
       deep,
       deviceLinkId,
       info: accelData,
     });
+    await deep.serial({
+      operations: serialOperations,
+    })
   });
 }
