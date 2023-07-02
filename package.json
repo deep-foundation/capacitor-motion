@@ -23,9 +23,9 @@
     "deep.json"
   ],
   "dependencies": {
-    "@deep-foundation/capacitor-device": "^10.0.1",
-    "@deep-foundation/core": "^0.0.2",
-    "@freephoenix888/object-to-links-async-converter": "^0.0.10",
+    "@deep-foundation/capacitor-device": "~10.0.1",
+    "@deep-foundation/core": "~0.0.2",
+    "@freephoenix888/object-to-links-async-converter": "~0.0.10",
     "debug": "^4.3.4"
   },
   "peerDependencies": {
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@atao60/fse-cli": "^0.1.7",
     "@capacitor/cli": "^5.0.0",
-    "@deep-foundation/npm-automation": "^3.0.7",
+    "@deep-foundation/npm-automation": "^3.0.9",
     "@types/debug": "^4.1.8",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^20.2.4",
