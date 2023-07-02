@@ -16,11 +16,11 @@ function MyComponent(deep, deviceLinkId) {
 ```
  */
 export function WithUseOrientationSubscription(param: WithUseOrientationSubscriptionParam) {
-   const { deep, deviceLinkId } = param;
+   const { deep,  containerLinkId } = param;
 
    useOrientationSubscription({
       deep,
-      deviceLinkId
+      containerLinkId
    })
 
    return null;

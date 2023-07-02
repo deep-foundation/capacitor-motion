@@ -16,11 +16,11 @@ function MyComponent(deep, deviceLinkId) {
 ```
  */
 export function WithUseAccelerationSubscription(param: WithUseAccelerationSubscription) {
-   const { deep, deviceLinkId } = param;
+   const { deep, containerLinkId } = param;
 
    useAccelerationSubscription({
       deep,
-      deviceLinkId
+      containerLinkId
    })
 
    return null;
