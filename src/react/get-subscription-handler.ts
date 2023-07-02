@@ -55,7 +55,7 @@ export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
 
   return subscriptionHandler;
 
-  async function subscriptionHandler(info: MotionInfo) {
+  async function subscriptionHandler(paramInfo: MotionInfo) {
     const debug = createDebugMessages(
       `${PACKAGE_NAME}:getSubscriptionHandler:subscriptionHandler`
     );
@@ -75,6 +75,10 @@ export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
       data: [motionLink],
     } = await deep.select(motionSelectData);
     debug({ motionLink });
+    const info = {
+      ...paramInfo,
+      ...motionLink?.value?.value
+    }
     let serialOperations: Array<SerialOperation>;
     if (!motionLink) {
       serialOperations = await getMotionInsertSerialOperations({
