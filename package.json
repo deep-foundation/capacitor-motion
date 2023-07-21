@@ -11,7 +11,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "fse remove dist && tsc",
+    "build": "tsc",
+    "clean-build": "fse remove dist && npm run build",
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "npm-install": "npm-install"
