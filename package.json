@@ -1,7 +1,12 @@
 {
   "name": "@deep-foundation/capacitor-motion",
   "keywords": [
-    "deep-package"
+    "deep-package",
+    "capacitor",
+    "motion",
+    "capacitor-motion",
+    "deep",
+    "deep-foundation"
   ],
   "description": "A deep package that is based on @capacitor/motion package",
   "repository": {
