@@ -15,8 +15,40 @@ jobs:
     secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}
     with:
-      build-command: "npm run build"
+      build-command: |
+        git config --global user.name 'FreePhoenix888'
+        git config --global user.email 'freephoenix888@gmail.com'
+
+        npx --yes --package @deep-foundation/npm-automation@10.0.18 generate-package-class
+        git add ./src/package.ts
+        if git diff --staged --quiet
+        then
+          echo "No changes to commit"
+        else
+          git commit -m 'docs: update ./src/package.ts'
+          git push origin main
+        fi
+
+        npm run build
       test-command: "echo 'Tests are temporarily disabled'"
       should-generate-documentation: true
-      generate-documentation-command: npx --yes typedoc ./src/main.ts
+      generate-documentation-command: |
+        git config --global user.name 'FreePhoenix888'
+        git config --global user.email 'freephoenix888@gmail.com'
+
+        table_of_contents=$(npx markdown-toc@1.2.0 README.md)
+        pattern="(<!-- TABLE_OF_CONTENTS_START -->)[\\S\\s]*(<!-- TABLE_OF_CONTENTS_END -->)"
+        replacement=$'$1\n'"${table_of_contents}"$'\n$2'
+        npx replace "$pattern" "$replacement" README.md
+
+        git add README.md
+        if git diff --staged --quiet
+        then
+          echo "No changes to commit"
+        else
+          git commit -m 'docs: update README.md'
+          git push origin main
+        fi
+
+        npx --yes typedoc@0.24.8 ./src/main.ts 
         
