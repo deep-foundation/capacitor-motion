@@ -47,7 +47,10 @@ No one field is required. You can add any fields as you want. Only the fields th
 
 Feel free to contribute. Please fork the repository and submit a pull request for any bugs, improvements, or features.
 
-
+# Library
+## Library Usage
+See [Documentation] for examples and API
 
 
 [`Motion`]: https://deep-foundation.github.io/capacitor-motion/enums/LinkName.html#Motion
+[Documentation]: https://deep-foundation.github.io/capacitor-motion/
