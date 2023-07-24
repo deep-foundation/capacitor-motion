@@ -2,7 +2,7 @@
 [![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/deep-foundation/capacitor-motion)
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label&color=purple)](https://discord.gg/deep-foundation)
 
-Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@capacitor/motion).
+Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@capacitor/motion) and typescript library for comfortable using of this deep package using typescript
 
 [**Documentation**](https://deep-foundation.github.io/capacitor-motion/)
 
