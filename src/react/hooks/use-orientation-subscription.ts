@@ -4,7 +4,7 @@ import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
 import { useEffect } from "react";
 import { getSubscriptionHandler } from "../get-subscription-handler";
 import createDebugMessages from 'debug';
-import { PACKAGE_NAME } from "../../package-name";
+import { Package } from "../../package";
 
 /**
  * This hook subscribes to the orientation event and saves the data to Deep
@@ -21,9 +21,10 @@ useOrientationSubscription({
 ```
  */
 export function useOrientationSubscription(param:UseOrientationSubscriptionParam) {
-   const debug = createDebugMessages(`${PACKAGE_NAME}:useOrientationSubscription`)
-   debug({param})
    const { deep, containerLinkId} = param;
+   const $package = new Package({deep})
+   const debug = createDebugMessages(`${$package.name}:useOrientationSubscription`)
+   debug({param})
 
     useEffect(() => {
       const accelerationHandlerFunction = getSubscriptionHandler({

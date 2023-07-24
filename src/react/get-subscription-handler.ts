@@ -7,8 +7,7 @@ import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import createDebugMessages from 'debug';
 import { getMotionInsertSerialOperations } from '../get-motion-insert-serial-operations';
 import { getMotionValueUpdateSerialOperations } from '../get-motion-value-update-serial-operationsa';
-import { LinkName } from '../link-name';
-import { PACKAGE_NAME } from '../package-name';
+import { Package } from '../package';
 
 /**
  * Returns a subscription handler for the acceleration/orientation event
@@ -49,19 +48,20 @@ useEffect(() => {
 ```
  */
 export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
-  const debug = createDebugMessages(`${PACKAGE_NAME}:getSubscriptionHandler`);
-  debug({ param });
   const { deep, containerLinkId } = param;
+  const $package = new Package({ deep });
+  const debug = createDebugMessages(`${$package.name}:getSubscriptionHandler`);
+  debug({ param });
 
   return subscriptionHandler;
 
   async function subscriptionHandler(paramInfo: MotionInfo) {
     const debug = createDebugMessages(
-      `${PACKAGE_NAME}:getSubscriptionHandler:subscriptionHandler`
+      `${$package.name}:getSubscriptionHandler:subscriptionHandler`
     );
     const motionSelectData: BoolExpLink = {
       type_id: {
-        _id: [PACKAGE_NAME, LinkName[LinkName.Motion]],
+        _id: [$package.name, $package.Motion.name]
       },
       in: {
         type_id: {

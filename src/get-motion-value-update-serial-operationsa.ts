@@ -2,13 +2,13 @@ import {
   DeepClient,
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client.js';
-import { PACKAGE_NAME } from './package-name.js';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types.js';
 import { MotionInfo } from './motion-info.js';
 import createDebugMessages from 'debug';
+import { Package } from './package.js';
 
 /**
    * Updates value of {@link GetMotionValueUpdateSerialOperationsParam.motionLink} or {@link GetMotionValueUpdateSerialOperationsParam.motionLinkId} to {@link GetMotionValueUpdateSerialOperationsParam.info}
@@ -57,11 +57,12 @@ export async function getMotionValueUpdateSerialOperations(
   param: GetMotionValueUpdateSerialOperationsParam
 ): Promise<Array<SerialOperation>> {
   const serialOperations: Array<SerialOperation> = [];
+  const { deep } = param;
+  const $package = new Package({ deep });
   const debug = createDebugMessages(
-    `${PACKAGE_NAME}:getMotionValueUpdateSerialOperations`
+    `${$package.name}:getMotionValueUpdateSerialOperations`
   );
   debug({ param });
-  const { deep } = param;
 
   const info = await removeRedundantFieldsFromMotionInfo({ info: param.info });
   debug({ info });
@@ -97,7 +98,7 @@ export async function getMotionValueUpdateSerialOperations(
    */
   async function getMotionLink() {
     const debug = createDebugMessages(
-      `${PACKAGE_NAME}:getMotionValueUpdateSerialOperations:getMotionLink`
+      `${$package.name}:getMotionValueUpdateSerialOperations:getMotionLink`
     );
     let motionLink: Link<number>;
     if ('motionLinkId' in param && 'motionLink' in param) {
@@ -131,7 +132,7 @@ export async function getMotionValueUpdateSerialOperations(
       type: 'insert',
       objects: {
         id: motionLinkId,
-        type_id: await deep.id(PACKAGE_NAME, 'Motion'),
+        type_id: await deep.id($package.name, 'Motion'),
         from_id: motionLinkId,
         to_id: motionLinkId,
         in: {

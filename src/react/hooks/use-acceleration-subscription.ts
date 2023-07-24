@@ -5,12 +5,11 @@ import {
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client';
 import { useEffect } from 'react';
-import { PACKAGE_NAME } from '../../package-name';
-import { LinkName } from '../../link-name';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import createDebugMessages from 'debug';
 import { getMotionInsertSerialOperations } from '../../get-motion-insert-serial-operations';
 import { getSubscriptionHandler } from '../get-subscription-handler';
+import { Package } from '../../package';
 
 /**
  * This hook subscribes to the acceleration event and saves the data to Deep
@@ -29,11 +28,12 @@ useAccelerationSubscription({
 export function useAccelerationSubscription(
   param: UseAccelerationSubscriptionParam
 ) {
+  const { deep, containerLinkId } = param;
+  const $package = new Package({ deep });
   const debug = createDebugMessages(
-    `${PACKAGE_NAME}:useAccelerationSubscription`
+    `${$package.name}:useAccelerationSubscription`
   );
   debug({ param });
-  const { deep, containerLinkId } = param;
 
   useEffect(() => {
     const accelerationHandlerFunction = getSubscriptionHandler({

@@ -2,11 +2,10 @@ import {
   DeepClient,
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client';
-import { LinkName } from './link-name';
-import { PACKAGE_NAME } from './package-name';
 import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
 import { MotionInfo } from './motion-info';
 import createDebugMessages from 'debug';
+import { Package } from './package';
 
 /**
   * Gets serial operations to insert Motion
@@ -26,14 +25,15 @@ export async function getMotionInsertSerialOperations(
   param: GetMotionInsertSerialOperationsParam
 ): Promise<Array<SerialOperation>> {
   const serialOperations = [];
-  const debug = createDebugMessages(`${PACKAGE_NAME}:getMotionInsertSerialOperations`);
-  debug({param})
   const {
     deep,
     info,
     containValue,
     containerLinkId,
   } = param;
+  const $package = new Package({deep})
+  const debug = createDebugMessages(`${$package.name}:getMotionInsertSerialOperations`);
+  debug({param})
   const reservedLinkIds = await getReservedLinkIds();
   debug({reservedLinkIds})
   const { containLinkId, motionLinkId } = reservedLinkIds;
@@ -122,7 +122,7 @@ export async function getMotionInsertSerialOperations(
         (await deep.id('@deep-foundation/core', 'Contain')),
       motionTypeLinkId:
         param.typeLinkIds?.motionTypeLinkId ||
-        (await deep.id(PACKAGE_NAME, LinkName[LinkName.Motion])),
+        await $package.Motion.id(),
     };
     return result;
   }
