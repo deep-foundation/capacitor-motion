@@ -120,37 +120,6 @@ export async function getMotionValueUpdateSerialOperations(
   }
 
   /**
-   * Gets serial operation that inserts link of type {@link Motion} with id {@link motionLinkId} to {@link motionLinkId}
-   */
-  async function getMotionLinkInsertSerialOperation({
-    motionLinkId,
-  }: {
-    motionLinkId: number;
-  }) {
-    return createSerialOperation({
-      table: 'links',
-      type: 'insert',
-      objects: {
-        id: motionLinkId,
-        type_id: await deep.id($package.name, 'Motion'),
-        from_id: motionLinkId,
-        to_id: motionLinkId,
-        in: {
-          data: {
-            type_id: await deep.id('@deep-foundation/core', 'Contain'),
-            from_id: motionLinkId,
-            string: {
-              data: {
-                value: 'Motion',
-              },
-            },
-          },
-        },
-      },
-    });
-  }
-
-  /**
    * Gets serial operation that inserts value of a link of type {@link Motion} with id {@link motionLinkId} to {@link info}
    */
   async function getMotionLinkValueInsertSerialOperation({
