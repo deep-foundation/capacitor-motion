@@ -15,19 +15,19 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 - Install this package in your deep by using npm-packager
 - Give permissions to this package
 
-# Motion Object Value
-
-The [`Motion`] link can have object value.  
-No one field is required. You can add any fields as you want. Only the fields that are supported by this package will be represented as links  
-- [**Supported fields can be found in the `Motion` interface**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html)  
-- [**Example of Motion Object Value**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html#md:motion-info-example)
-
 # Usage
 
 1. Insert a link of type [`Motion`]
 2. Change its object value to the object with properties described in [Motion Object Value](#md:motion-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) to represent [`Motion`] object value as links
    or  
    Insert a link of any type with any property name from [Motion Object Value](#md:motion-object-value) from [`Motion`] link to the same [`Motion`] link and set its value to the value of the corresponding property of the [`Motion`] object value. For example insert [`Acceleration`] from [`Motion`] to [`Motion`] and [`AccelerationX`] from [`Acceleration`] to [`Acceleration`]
+
+# Motion Object Value
+
+The [`Motion`] link can have object value.  
+No one field is required. You can add any fields as you want. Only the fields that are supported by this package will be represented as links  
+- [**Supported fields can be found in the `Motion` interface**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html)  
+- [**Example of Motion Object Value**](https://deep-foundation.github.io/capacitor-motion/types/MotionInfo.html#md:motion-info-example)
 
 # Update Handling
 
