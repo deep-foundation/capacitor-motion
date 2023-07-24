@@ -4,8 +4,6 @@
 
 Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@capacitor/motion) and typescript library for comfortable using of this deep package using typescript
 
-[**Documentation**](https://deep-foundation.github.io/capacitor-motion/)
-
 # Table Of Contents
 <!-- TABLE_OF_CONTENTS_START -->
 - [Table Of Contents](#table-of-contents)
@@ -14,7 +12,7 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 - [Motion Object Value](#motion-object-value)
 - [Update Handling](#update-handling)
 - [Library](#library)
-  * [Library Usage](#library-usage)
+  - [Library Usage](#library-usage)
 - [Contribution](#contribution)
 <!-- TABLE_OF_CONTENTS_END -->
 
