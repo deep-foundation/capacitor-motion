@@ -6,7 +6,9 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 
 [**Documentation**](https://deep-foundation.github.io/capacitor-motion/)
 
-[**List of links**](https://deep-foundation.github.io/capacitor-motion/enums/LinkName.html)
+# Table Of Contents
+<!-- TABLE_OF_CONTENTS_START -->
+<!-- TABLE_OF_CONTENTS_END -->
 
 ## Prerequisitions
 
