@@ -92,6 +92,43 @@ const typeOfValueOfMotionAccelerationIncludingGravityTypeLinkId = package["TypeO
 const motionAccelerationYTypeLinkId = package["MotionAccelerationY"].idLocal();
 const typeOfValueOfMotionRotationRateGammaTypeLinkId = package["TypeOfValueOfMotionRotationRateGamma"].idLocal();
 ```
+#### Use name field to get the name of the link
+```ts
+const package = new Package({deep});
+const motionRotationRateGamma = package["MotionRotationRateGamma"].name;
+const motion = package["Motion"].name;
+const configFor@freephoenix888/object-to-links-async-converter = package["ConfigFor@freephoenix888/object-to-links-async-converter"].name;
+const handleMotionUpdate = package["HandleMotionUpdate"].name;
+const motionAcceleration = package["MotionAcceleration"].name;
+const motionAccelerationZ = package["MotionAccelerationZ"].name;
+const typeOfValueOfMotionAccelerationZ = package["TypeOfValueOfMotionAccelerationZ"].name;
+const motionAccelerationX = package["MotionAccelerationX"].name;
+const typeOfValueOfMotionAccelerationX = package["TypeOfValueOfMotionAccelerationX"].name;
+const typeOfValueOfMotionAcceleration = package["TypeOfValueOfMotionAcceleration"].name;
+const handleMotionAccelerationUpdate = package["HandleMotionAccelerationUpdate"].name;
+const motionInterval = package["MotionInterval"].name;
+const typeOfValueOfInterval = package["TypeOfValueOfInterval"].name;
+const typeOfValueOfMotion = package["TypeOfValueOfMotion"].name;
+const motionRotationRate = package["MotionRotationRate"].name;
+const motionRotationRateAlpha = package["MotionRotationRateAlpha"].name;
+const typeOfValueOfMotionRotationRateAlpha = package["TypeOfValueOfMotionRotationRateAlpha"].name;
+const handleMotionRotationRateUpdate = package["HandleMotionRotationRateUpdate"].name;
+const motionRotationRateBeta = package["MotionRotationRateBeta"].name;
+const typeOfValueOfMotionRotationRateBeta = package["TypeOfValueOfMotionRotationRateBeta"].name;
+const typeOfValueOfMotionRotationRate = package["TypeOfValueOfMotionRotationRate"].name;
+const typeOfValueOfMotionAccelerationY = package["TypeOfValueOfMotionAccelerationY"].name;
+const motionAccelerationIncludingGravity = package["MotionAccelerationIncludingGravity"].name;
+const motionAccelerationIncludingGravityZ = package["MotionAccelerationIncludingGravityZ"].name;
+const typeOfValueOfMotionAccelerationIncludingGravityZ = package["TypeOfValueOfMotionAccelerationIncludingGravityZ"].name;
+const handleMotionAccelerationIncludingGravityUpdate = package["HandleMotionAccelerationIncludingGravityUpdate"].name;
+const motionAccelerationIncludingGravityY = package["MotionAccelerationIncludingGravityY"].name;
+const typeOfValueOfMotionAccelerationIncludingGravityY = package["TypeOfValueOfMotionAccelerationIncludingGravityY"].name;
+const motionAccelerationIncludingGravityX = package["MotionAccelerationIncludingGravityX"].name;
+const typeOfValueOfMotionAccelerationIncludingGravityX = package["TypeOfValueOfMotionAccelerationIncludingGravityX"].name;
+const typeOfValueOfMotionAccelerationIncludingGravity = package["TypeOfValueOfMotionAccelerationIncludingGravity"].name;
+const motionAccelerationY = package["MotionAccelerationY"].name;
+const typeOfValueOfMotionRotationRateGamma = package["TypeOfValueOfMotionRotationRateGamma"].name;
+```
 */
 export class Package extends BasePackage {
 
@@ -115,6 +152,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionRotationRateGammaTypeLinkId = await package["MotionRotationRateGamma"].localId();
       ```
+      #### Use name field to get the name of the MotionRotationRateGamma link
+      ```ts
+      const package = new Package({deep});
+      const motionRotationRateGamma = await package["MotionRotationRateGamma"].name;
+      ```
       */
       public "MotionRotationRateGamma" = this.createEntity("MotionRotationRateGamma");
       /**
@@ -128,6 +170,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionTypeLinkId = await package["Motion"].localId();
+      ```
+      #### Use name field to get the name of the Motion link
+      ```ts
+      const package = new Package({deep});
+      const motion = await package["Motion"].name;
       ```
       */
       public "Motion" = this.createEntity("Motion");
@@ -143,6 +190,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const configFor@freephoenix888/object-to-links-async-converterTypeLinkId = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].localId();
       ```
+      #### Use name field to get the name of the ConfigFor@freephoenix888/object-to-links-async-converter link
+      ```ts
+      const package = new Package({deep});
+      const configFor@freephoenix888/object-to-links-async-converter = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].name;
+      ```
       */
       public "ConfigFor@freephoenix888/object-to-links-async-converter" = this.createEntity("ConfigFor@freephoenix888/object-to-links-async-converter");
       /**
@@ -156,6 +208,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const handleMotionUpdateTypeLinkId = await package["HandleMotionUpdate"].localId();
+      ```
+      #### Use name field to get the name of the HandleMotionUpdate link
+      ```ts
+      const package = new Package({deep});
+      const handleMotionUpdate = await package["HandleMotionUpdate"].name;
       ```
       */
       public "HandleMotionUpdate" = this.createEntity("HandleMotionUpdate");
@@ -171,6 +228,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionAccelerationTypeLinkId = await package["MotionAcceleration"].localId();
       ```
+      #### Use name field to get the name of the MotionAcceleration link
+      ```ts
+      const package = new Package({deep});
+      const motionAcceleration = await package["MotionAcceleration"].name;
+      ```
       */
       public "MotionAcceleration" = this.createEntity("MotionAcceleration");
       /**
@@ -184,6 +246,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionAccelerationZTypeLinkId = await package["MotionAccelerationZ"].localId();
+      ```
+      #### Use name field to get the name of the MotionAccelerationZ link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationZ = await package["MotionAccelerationZ"].name;
       ```
       */
       public "MotionAccelerationZ" = this.createEntity("MotionAccelerationZ");
@@ -199,6 +266,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationZTypeLinkId = await package["TypeOfValueOfMotionAccelerationZ"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationZ link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationZ = await package["TypeOfValueOfMotionAccelerationZ"].name;
+      ```
       */
       public "TypeOfValueOfMotionAccelerationZ" = this.createEntity("TypeOfValueOfMotionAccelerationZ");
       /**
@@ -212,6 +284,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionAccelerationXTypeLinkId = await package["MotionAccelerationX"].localId();
+      ```
+      #### Use name field to get the name of the MotionAccelerationX link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationX = await package["MotionAccelerationX"].name;
       ```
       */
       public "MotionAccelerationX" = this.createEntity("MotionAccelerationX");
@@ -227,6 +304,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationXTypeLinkId = await package["TypeOfValueOfMotionAccelerationX"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationX link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationX = await package["TypeOfValueOfMotionAccelerationX"].name;
+      ```
       */
       public "TypeOfValueOfMotionAccelerationX" = this.createEntity("TypeOfValueOfMotionAccelerationX");
       /**
@@ -240,6 +322,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationTypeLinkId = await package["TypeOfValueOfMotionAcceleration"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAcceleration link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAcceleration = await package["TypeOfValueOfMotionAcceleration"].name;
       ```
       */
       public "TypeOfValueOfMotionAcceleration" = this.createEntity("TypeOfValueOfMotionAcceleration");
@@ -255,6 +342,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const handleMotionAccelerationUpdateTypeLinkId = await package["HandleMotionAccelerationUpdate"].localId();
       ```
+      #### Use name field to get the name of the HandleMotionAccelerationUpdate link
+      ```ts
+      const package = new Package({deep});
+      const handleMotionAccelerationUpdate = await package["HandleMotionAccelerationUpdate"].name;
+      ```
       */
       public "HandleMotionAccelerationUpdate" = this.createEntity("HandleMotionAccelerationUpdate");
       /**
@@ -268,6 +360,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionIntervalTypeLinkId = await package["MotionInterval"].localId();
+      ```
+      #### Use name field to get the name of the MotionInterval link
+      ```ts
+      const package = new Package({deep});
+      const motionInterval = await package["MotionInterval"].name;
       ```
       */
       public "MotionInterval" = this.createEntity("MotionInterval");
@@ -283,6 +380,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfIntervalTypeLinkId = await package["TypeOfValueOfInterval"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfInterval link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfInterval = await package["TypeOfValueOfInterval"].name;
+      ```
       */
       public "TypeOfValueOfInterval" = this.createEntity("TypeOfValueOfInterval");
       /**
@@ -296,6 +398,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionTypeLinkId = await package["TypeOfValueOfMotion"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotion link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotion = await package["TypeOfValueOfMotion"].name;
       ```
       */
       public "TypeOfValueOfMotion" = this.createEntity("TypeOfValueOfMotion");
@@ -311,6 +418,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionRotationRateTypeLinkId = await package["MotionRotationRate"].localId();
       ```
+      #### Use name field to get the name of the MotionRotationRate link
+      ```ts
+      const package = new Package({deep});
+      const motionRotationRate = await package["MotionRotationRate"].name;
+      ```
       */
       public "MotionRotationRate" = this.createEntity("MotionRotationRate");
       /**
@@ -324,6 +436,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionRotationRateAlphaTypeLinkId = await package["MotionRotationRateAlpha"].localId();
+      ```
+      #### Use name field to get the name of the MotionRotationRateAlpha link
+      ```ts
+      const package = new Package({deep});
+      const motionRotationRateAlpha = await package["MotionRotationRateAlpha"].name;
       ```
       */
       public "MotionRotationRateAlpha" = this.createEntity("MotionRotationRateAlpha");
@@ -339,6 +456,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionRotationRateAlphaTypeLinkId = await package["TypeOfValueOfMotionRotationRateAlpha"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionRotationRateAlpha link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionRotationRateAlpha = await package["TypeOfValueOfMotionRotationRateAlpha"].name;
+      ```
       */
       public "TypeOfValueOfMotionRotationRateAlpha" = this.createEntity("TypeOfValueOfMotionRotationRateAlpha");
       /**
@@ -352,6 +474,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const handleMotionRotationRateUpdateTypeLinkId = await package["HandleMotionRotationRateUpdate"].localId();
+      ```
+      #### Use name field to get the name of the HandleMotionRotationRateUpdate link
+      ```ts
+      const package = new Package({deep});
+      const handleMotionRotationRateUpdate = await package["HandleMotionRotationRateUpdate"].name;
       ```
       */
       public "HandleMotionRotationRateUpdate" = this.createEntity("HandleMotionRotationRateUpdate");
@@ -367,6 +494,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionRotationRateBetaTypeLinkId = await package["MotionRotationRateBeta"].localId();
       ```
+      #### Use name field to get the name of the MotionRotationRateBeta link
+      ```ts
+      const package = new Package({deep});
+      const motionRotationRateBeta = await package["MotionRotationRateBeta"].name;
+      ```
       */
       public "MotionRotationRateBeta" = this.createEntity("MotionRotationRateBeta");
       /**
@@ -380,6 +512,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionRotationRateBetaTypeLinkId = await package["TypeOfValueOfMotionRotationRateBeta"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionRotationRateBeta link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionRotationRateBeta = await package["TypeOfValueOfMotionRotationRateBeta"].name;
       ```
       */
       public "TypeOfValueOfMotionRotationRateBeta" = this.createEntity("TypeOfValueOfMotionRotationRateBeta");
@@ -395,6 +532,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionRotationRateTypeLinkId = await package["TypeOfValueOfMotionRotationRate"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionRotationRate link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionRotationRate = await package["TypeOfValueOfMotionRotationRate"].name;
+      ```
       */
       public "TypeOfValueOfMotionRotationRate" = this.createEntity("TypeOfValueOfMotionRotationRate");
       /**
@@ -408,6 +550,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationYTypeLinkId = await package["TypeOfValueOfMotionAccelerationY"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationY link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationY = await package["TypeOfValueOfMotionAccelerationY"].name;
       ```
       */
       public "TypeOfValueOfMotionAccelerationY" = this.createEntity("TypeOfValueOfMotionAccelerationY");
@@ -423,6 +570,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionAccelerationIncludingGravityTypeLinkId = await package["MotionAccelerationIncludingGravity"].localId();
       ```
+      #### Use name field to get the name of the MotionAccelerationIncludingGravity link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationIncludingGravity = await package["MotionAccelerationIncludingGravity"].name;
+      ```
       */
       public "MotionAccelerationIncludingGravity" = this.createEntity("MotionAccelerationIncludingGravity");
       /**
@@ -436,6 +588,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const motionAccelerationIncludingGravityZTypeLinkId = await package["MotionAccelerationIncludingGravityZ"].localId();
+      ```
+      #### Use name field to get the name of the MotionAccelerationIncludingGravityZ link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationIncludingGravityZ = await package["MotionAccelerationIncludingGravityZ"].name;
       ```
       */
       public "MotionAccelerationIncludingGravityZ" = this.createEntity("MotionAccelerationIncludingGravityZ");
@@ -451,6 +608,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationIncludingGravityZTypeLinkId = await package["TypeOfValueOfMotionAccelerationIncludingGravityZ"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationIncludingGravityZ link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationIncludingGravityZ = await package["TypeOfValueOfMotionAccelerationIncludingGravityZ"].name;
+      ```
       */
       public "TypeOfValueOfMotionAccelerationIncludingGravityZ" = this.createEntity("TypeOfValueOfMotionAccelerationIncludingGravityZ");
       /**
@@ -464,6 +626,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const handleMotionAccelerationIncludingGravityUpdateTypeLinkId = await package["HandleMotionAccelerationIncludingGravityUpdate"].localId();
+      ```
+      #### Use name field to get the name of the HandleMotionAccelerationIncludingGravityUpdate link
+      ```ts
+      const package = new Package({deep});
+      const handleMotionAccelerationIncludingGravityUpdate = await package["HandleMotionAccelerationIncludingGravityUpdate"].name;
       ```
       */
       public "HandleMotionAccelerationIncludingGravityUpdate" = this.createEntity("HandleMotionAccelerationIncludingGravityUpdate");
@@ -479,6 +646,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionAccelerationIncludingGravityYTypeLinkId = await package["MotionAccelerationIncludingGravityY"].localId();
       ```
+      #### Use name field to get the name of the MotionAccelerationIncludingGravityY link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationIncludingGravityY = await package["MotionAccelerationIncludingGravityY"].name;
+      ```
       */
       public "MotionAccelerationIncludingGravityY" = this.createEntity("MotionAccelerationIncludingGravityY");
       /**
@@ -492,6 +664,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationIncludingGravityYTypeLinkId = await package["TypeOfValueOfMotionAccelerationIncludingGravityY"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationIncludingGravityY link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationIncludingGravityY = await package["TypeOfValueOfMotionAccelerationIncludingGravityY"].name;
       ```
       */
       public "TypeOfValueOfMotionAccelerationIncludingGravityY" = this.createEntity("TypeOfValueOfMotionAccelerationIncludingGravityY");
@@ -507,6 +684,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionAccelerationIncludingGravityXTypeLinkId = await package["MotionAccelerationIncludingGravityX"].localId();
       ```
+      #### Use name field to get the name of the MotionAccelerationIncludingGravityX link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationIncludingGravityX = await package["MotionAccelerationIncludingGravityX"].name;
+      ```
       */
       public "MotionAccelerationIncludingGravityX" = this.createEntity("MotionAccelerationIncludingGravityX");
       /**
@@ -520,6 +702,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationIncludingGravityXTypeLinkId = await package["TypeOfValueOfMotionAccelerationIncludingGravityX"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationIncludingGravityX link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationIncludingGravityX = await package["TypeOfValueOfMotionAccelerationIncludingGravityX"].name;
       ```
       */
       public "TypeOfValueOfMotionAccelerationIncludingGravityX" = this.createEntity("TypeOfValueOfMotionAccelerationIncludingGravityX");
@@ -535,6 +722,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const typeOfValueOfMotionAccelerationIncludingGravityTypeLinkId = await package["TypeOfValueOfMotionAccelerationIncludingGravity"].localId();
       ```
+      #### Use name field to get the name of the TypeOfValueOfMotionAccelerationIncludingGravity link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionAccelerationIncludingGravity = await package["TypeOfValueOfMotionAccelerationIncludingGravity"].name;
+      ```
       */
       public "TypeOfValueOfMotionAccelerationIncludingGravity" = this.createEntity("TypeOfValueOfMotionAccelerationIncludingGravity");
       /**
@@ -549,6 +741,11 @@ export class Package extends BasePackage {
       const package = new Package({deep});
       const motionAccelerationYTypeLinkId = await package["MotionAccelerationY"].localId();
       ```
+      #### Use name field to get the name of the MotionAccelerationY link
+      ```ts
+      const package = new Package({deep});
+      const motionAccelerationY = await package["MotionAccelerationY"].name;
+      ```
       */
       public "MotionAccelerationY" = this.createEntity("MotionAccelerationY");
       /**
@@ -562,6 +759,11 @@ export class Package extends BasePackage {
       ```ts
       const package = new Package({deep});
       const typeOfValueOfMotionRotationRateGammaTypeLinkId = await package["TypeOfValueOfMotionRotationRateGamma"].localId();
+      ```
+      #### Use name field to get the name of the TypeOfValueOfMotionRotationRateGamma link
+      ```ts
+      const package = new Package({deep});
+      const typeOfValueOfMotionRotationRateGamma = await package["TypeOfValueOfMotionRotationRateGamma"].name;
       ```
       */
       public "TypeOfValueOfMotionRotationRateGamma" = this.createEntity("TypeOfValueOfMotionRotationRateGamma");
