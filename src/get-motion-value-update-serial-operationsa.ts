@@ -14,7 +14,7 @@ import { Package } from './package.js';
    * Updates value of {@link GetMotionValueUpdateSerialOperationsParam.motionLink} or {@link GetMotionValueUpdateSerialOperationsParam.motionLinkId} to {@link GetMotionValueUpdateSerialOperationsParam.info}
    * 
    * @remarks
-   * After update, the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/enums/LinkName.html#UpdateHandler) will create links to represent the value
+   * After update, the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) will create links to represent the value
    * 
    * @throws if neither {@link motionLink} nor {@link motionLinkId} is passed
    * @throws if {@link motionLinkId} is passed but it does not exist
