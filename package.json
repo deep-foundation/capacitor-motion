@@ -16,12 +16,15 @@
   "version": "3.0.2",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:generate-package-class && tsc",
     "clean-build": "fse remove dist && npm run build",
     "npm-pull": "npm-pull",
     "npm-release": "npm-release",
     "npm-install": "npm-install",
-    "generate-package-class": "generate-package-class"
+    "build:generate-package-class": "generate-package-class",
+    "documentation:generate": "ts-node --esm ./automation/documentation/generate.ts",
+    "documentation:generate-table-of-contents-in-readme": "markdown-toc README.md",
+    "library:documentation:generate": "typedoc ./src/main.ts"
   },
   "exports": "./dist/main.js",
   "types": "dist/main.d.ts",
