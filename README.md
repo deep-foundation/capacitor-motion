@@ -27,7 +27,7 @@ Provides links based on [`@capacitor/motion`](https://www.npmjs.com/package/@cap
 1. Insert a link of type [`Motion`]
 2. Change its object value to the object with properties described in [Motion Object Value](#motion-object-value) and this update will be handled by the [`UpdateHandler`](https://freephoenix888.github.io/object-to-links-async-converter/classes/Package.html#UpdateHandler) to represent [`Motion`] object value as links
    or  
-   Insert a link of any type with any property name from [Motion Object Value](#motion-object-value) from [`Motion`] link to the same [`Motion`] link and set its value to the value of the corresponding property of the [`Motion`] object value. For example insert [`Acceleration`] from [`Motion`] to [`Motion`] and [`AccelerationX`] from [`Acceleration`] to [`Acceleration`]
+   Insert a link of any type with any property name from [Motion Object Value](#motion-object-value) from [`Motion`] link to the same [`Motion`] link and set its value to the value of the corresponding property of the [`Motion`] object value. For example insert [`MotionAcceleration`] from [`Motion`] to [`Motion`] and [`MotionAccelerationX`] from [`MotionAcceleration`] to [`MotionAcceleration`]
 
 # Motion Object Value
 
@@ -50,6 +50,6 @@ Feel free to contribute. Please fork the repository and submit a pull request fo
 
 
 [`Motion`]: https://deep-foundation.github.io/capacitor-motion/classes/Package.html#Motion
-[`Acceleration`]: https://deep-foundation.github.io/capacitor-motion/classes/Package.html#Acceleration
-[`AccelerationX`]: https://deep-foundation.github.io/capacitor-motion/classes/Package.html#AccelerationX
+[`MotionAcceleration`]: https://deep-foundation.github.io/capacitor-motion/classes/Package.html#MotionAcceleration
+[`MotionAccelerationX`]: https://deep-foundation.github.io/capacitor-motion/classes/Package.html#MotionAccelerationX
 [Documentation]: https://deep-foundation.github.io/capacitor-motion/
