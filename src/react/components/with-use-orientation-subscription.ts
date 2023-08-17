@@ -4,7 +4,7 @@ import { UseOrientationSubscriptionParam, useOrientationSubscription } from "../
  * A component wrapper for {@link useOrientationSubscription}
  * 
  * @remarks
- * Render this component when {@link WithUseOrientationSubscriptionParam.deep} and {@link WithUseOrientationSubscriptionParam.deviceLinkId} are ready
+ * Render this component when {@link WithOrientationSubscriptionParam.deep} and {@link WithOrientationSubscriptionParam.deviceLinkId} are ready
  * 
  * @example
 ```tsx
@@ -15,7 +15,7 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithUseOrientationSubscription(param: WithUseOrientationSubscriptionParam) {
+export function WithOrientationSubscription(param: WithOrientationSubscriptionParam) {
    const { deep,  containerLinkId } = param;
 
    useOrientationSubscription({
@@ -26,4 +26,4 @@ export function WithUseOrientationSubscription(param: WithUseOrientationSubscrip
    return null;
 }
 
-export type WithUseOrientationSubscriptionParam = UseOrientationSubscriptionParam;
+export type WithOrientationSubscriptionParam = UseOrientationSubscriptionParam;

@@ -15,7 +15,7 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithUseAccelerationSubscription(param: WithUseAccelerationSubscriptionParam) {
+export function WithAccelerationSubscription(param: WithAccelerationSubscriptionParam) {
    const { deep, containerLinkId } = param;
 
    useAccelerationSubscription({
@@ -26,4 +26,4 @@ export function WithUseAccelerationSubscription(param: WithUseAccelerationSubscr
    return null;
 }
 
-export type WithUseAccelerationSubscriptionParam = UseAccelerationSubscriptionParam;
+export type WithAccelerationSubscriptionParam = UseAccelerationSubscriptionParam;
