@@ -38,7 +38,7 @@ export function useAccelerationSubscription(
   useEffect(() => {
     const accelerationHandlerFunction = getSubscriptionHandler({
       deep,
-      containerLinkId,
+      containerLinkId: deep.linkId!,
     });
     const accelerationHandler = Motion.addListener(
       'accel',
@@ -58,6 +58,8 @@ export interface UseAccelerationSubscriptionParam {
   deep: DeepClient;
   /**
    * A container link id
+   * 
+   * @defaultValue deep.linkId
    */
-  containerLinkId: number;
+  containerLinkId?: number;
 }

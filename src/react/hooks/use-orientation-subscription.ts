@@ -29,7 +29,7 @@ export function useOrientationSubscription(param:UseOrientationSubscriptionParam
     useEffect(() => {
       const accelerationHandlerFunction = getSubscriptionHandler({
          deep,
-         containerLinkId,
+         containerLinkId: deep.linkId!,
       })
       const orientationHandler = Motion.addListener('orientation', (event) => {
          accelerationHandlerFunction({
@@ -49,6 +49,8 @@ export interface UseOrientationSubscriptionParam {
    deep: DeepClient;
    /**
     * A container link id
+    * 
+    * @defaultValue deep.linkId
     */
-   containerLinkId: number;
+   containerLinkId?: number;
 }
