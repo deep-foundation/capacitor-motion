@@ -1,13 +1,13 @@
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
-import { MotionInfo } from '../motion-info';
+} from '@deep-foundation/deeplinks/imports/client.js';
+import { MotionInfo } from '../motion-info.js';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import createDebugMessages from 'debug';
-import { getMotionInsertSerialOperations } from '../get-motion-insert-serial-operations';
-import { getMotionValueUpdateSerialOperations } from '../get-motion-value-update-serial-operationsa';
-import { Package } from '../package';
+import { getMotionInsertSerialOperations } from '../get-motion-insert-serial-operations.js';
+import { getMotionValueUpdateSerialOperations } from '../get-motion-value-update-serial-operations.js';
+import { Package } from '../package.js';
 
 /**
  * Returns a subscription handler for the acceleration/orientation event

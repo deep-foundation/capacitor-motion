@@ -1,4 +1,4 @@
-import { UseOrientationSubscriptionParam, useOrientationSubscription } from "../hooks/use-orientation-subscription";
+import { UseOrientationSubscriptionParam, useOrientationSubscription } from "../hooks/use-orientation-subscription.js";
 
 /**
  * A component wrapper for {@link useOrientationSubscription}

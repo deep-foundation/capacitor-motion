@@ -3,9 +3,8 @@ import {
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client.js';
 import { Link } from '@deep-foundation/deeplinks/imports/minilinks.js';
-import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
+import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
 import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
-import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types.js';
 import { MotionInfo } from './motion-info.js';
 import createDebugMessages from 'debug';
 import { Package } from './package.js';

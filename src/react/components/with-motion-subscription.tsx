@@ -1,6 +1,6 @@
-import { UseAccelerationSubscriptionParam, useAccelerationSubscription } from "../hooks/use-acceleration-subscription";
-import { WithAccelerationSubscription, WithAccelerationSubscriptionParam } from "./with-use-acceleration-subscription";
-import { WithOrientationSubscription, WithOrientationSubscriptionParam } from "./with-use-orientation-subscription";
+import { UseAccelerationSubscriptionParam, useAccelerationSubscription } from "../hooks/use-acceleration-subscription.js";
+import { WithAccelerationSubscription, WithAccelerationSubscriptionParam } from "./with-use-acceleration-subscription.js";
+import { WithOrientationSubscription, WithOrientationSubscriptionParam } from "./with-use-orientation-subscription.js";
 
 /**
  * A component wrapper for {@link WithAccelerationSubscription} and {@link WithOrientationSubscription}

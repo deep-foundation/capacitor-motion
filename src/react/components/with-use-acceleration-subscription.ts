@@ -1,4 +1,4 @@
-import { UseAccelerationSubscriptionParam, useAccelerationSubscription } from "../hooks/use-acceleration-subscription";
+import { UseAccelerationSubscriptionParam, useAccelerationSubscription } from "../hooks/use-acceleration-subscription.js";
 
 /**
  * A component wrapper for {@link useOrientationSubscription}

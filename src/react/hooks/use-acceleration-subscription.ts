@@ -1,15 +1,12 @@
 import { Motion } from '@capacitor/motion';
-import { getMotionValueUpdateSerialOperations } from '../../get-motion-value-update-serial-operationsa';
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
+} from '@deep-foundation/deeplinks/imports/client.js';
 import { useEffect } from 'react';
-import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import createDebugMessages from 'debug';
-import { getMotionInsertSerialOperations } from '../../get-motion-insert-serial-operations';
-import { getSubscriptionHandler } from '../get-subscription-handler';
-import { Package } from '../../package';
+import { getSubscriptionHandler } from '../get-subscription-handler.js';
+import { Package } from '../../package.js';
 
 /**
  * This hook subscribes to the acceleration event and saves the data to Deep

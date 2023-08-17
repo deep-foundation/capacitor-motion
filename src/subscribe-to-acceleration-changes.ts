@@ -1,5 +1,5 @@
 import { Motion } from '@capacitor/motion';
-import { getMotionValueUpdateSerialOperations } from './get-motion-value-update-serial-operationsa.js';
+import { getMotionValueUpdateSerialOperations } from './get-motion-value-update-serial-operations.js';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
 import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param.js';
 import { getMotionInsertSerialOperations } from './get-motion-insert-serial-operations.js';

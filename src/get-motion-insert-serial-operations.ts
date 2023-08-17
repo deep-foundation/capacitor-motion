@@ -1,11 +1,11 @@
 import {
   DeepClient,
   SerialOperation,
-} from '@deep-foundation/deeplinks/imports/client';
-import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql';
-import { MotionInfo } from './motion-info';
+} from '@deep-foundation/deeplinks/imports/client.js';
+import { createSerialOperation } from '@deep-foundation/deeplinks/imports/gql/index.js';
+import { MotionInfo } from './motion-info.js';
 import createDebugMessages from 'debug';
-import { Package } from './package';
+import { Package } from './package.js';
 
 /**
   * Gets serial operations to insert Motion

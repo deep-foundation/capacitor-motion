@@ -1,10 +1,9 @@
 import { Motion } from "@capacitor/motion";
-import { getMotionValueUpdateSerialOperations } from "../../get-motion-value-update-serial-operationsa";
-import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
+import { DeepClient } from "@deep-foundation/deeplinks/imports/client.js";
 import { useEffect } from "react";
-import { getSubscriptionHandler } from "../get-subscription-handler";
+import { getSubscriptionHandler } from "../get-subscription-handler.js";
 import createDebugMessages from 'debug';
-import { Package } from "../../package";
+import { Package } from "../../package.js";
 
 /**
  * This hook subscribes to the orientation event and saves the data to Deep
