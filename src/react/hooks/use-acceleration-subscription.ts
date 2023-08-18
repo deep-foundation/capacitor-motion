@@ -25,7 +25,7 @@ useAccelerationSubscription({
 export function useAccelerationSubscription(
   param: UseAccelerationSubscriptionParam
 ) {
-  const { deep, containerLinkId } = param;
+  const { deep, containerLinkId = deep.linkId! } = param;
   const $package = new Package({ deep });
   const debug = createDebugMessages(
     `${$package.name}:useAccelerationSubscription`
@@ -35,7 +35,7 @@ export function useAccelerationSubscription(
   useEffect(() => {
     const accelerationHandlerFunction = getSubscriptionHandler({
       deep,
-      containerLinkId: deep.linkId!,
+      containerLinkId,
     });
     const accelerationHandler = Motion.addListener(
       'accel',
