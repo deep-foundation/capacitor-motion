@@ -21,7 +21,6 @@ export function WithMotionSubscription(param: WithMotionSubscriptionParam) {
    return (
     <>
       <WithAccelerationSubscription {...param} />
-      <WithOrientationSubscription {...param} />
     </>
    );
 }
