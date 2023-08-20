@@ -84,6 +84,7 @@ export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
       serialOperations = await getMotionInsertSerialOperations({
         deep,
         info,
+        containerLinkId
       });
     } else {
       serialOperations = await getMotionValueUpdateSerialOperations({
