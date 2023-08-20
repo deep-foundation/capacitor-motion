@@ -20,7 +20,7 @@ useOrientationSubscription({
 ```
  */
 export function useOrientationSubscription(param:UseOrientationSubscriptionParam) {
-   const { deep, containerLinkId} = param;
+   const { deep, containerLinkId = deep.linkId!} = param;
    const $package = new Package({deep})
    const debug = createDebugMessages(`${$package.name}:useOrientationSubscription`)
    debug({param})
@@ -28,7 +28,7 @@ export function useOrientationSubscription(param:UseOrientationSubscriptionParam
     useEffect(() => {
       const accelerationHandlerFunction = getSubscriptionHandler({
          deep,
-         containerLinkId: deep.linkId!,
+         containerLinkId,
       })
       const orientationHandler = Motion.addListener('orientation', (event) => {
          accelerationHandlerFunction({
