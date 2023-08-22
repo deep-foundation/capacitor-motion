@@ -8,5 +8,5 @@ export {type SubscribeToMotionChangesParam} from './subscribe-to-motion-changes-
 export {WithAccelerationSubscription ,type WithAccelerationSubscriptionParam } from './react/components/with-use-acceleration-subscription.js'
 export {WithOrientationSubscription , type WithOrientationSubscriptionParam } from './react/components/with-use-orientation-subscription.js'
 export {WithMotionSubscription, type WithMotionSubscriptionParam} from './react/components/with-motion-subscription.js'
-export {WithPlatformChecking, type WithPlatformCheckingOptions} from './react/components/with-platform-checking.js'
+export {WithOperatingSystemChecking , type WithOperatingSystemCheckingOptions} from './react/components/with-operating-system-checking.js'
 export {Package,PackageOptions} from './package.js'
