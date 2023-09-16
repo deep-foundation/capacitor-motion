@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { requestPermissions,PermissionState } from "../../request-permissions";
-import { usePermissionsRequest } from "../hooks/use-permissions-request";
+import { requestPermissions,PermissionState } from "../../request-permissions.js";
+import { usePermissionsRequest } from "../hooks/use-permissions-request.js";
 
 /**
  * A component that requires permissions and renders different content based on the permissions state
