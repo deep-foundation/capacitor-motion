@@ -8,6 +8,7 @@ import { AccelListenerEvent, Motion, RotationRate } from '@capacitor/motion';
 import { MotionInfo } from './motion-info.js';
 import createDebugMessages from 'debug';
 import { Package } from './package.js';
+import deepEqual from 'deep-equal'
 
 /**
    * Updates value of {@link GetMotionValueUpdateSerialOperationsParam.motionLink} or {@link GetMotionValueUpdateSerialOperationsParam.motionLinkId} to {@link GetMotionValueUpdateSerialOperationsParam.info}
@@ -68,6 +69,11 @@ export async function getMotionValueUpdateSerialOperations(
 
   let motionLink = await getMotionLink();
   debug({ motionLink });
+
+  if(deepEqual(motionLink.value?.value, info)) {
+    debug(`Data in deep is the same, returning []`)
+    return []
+  }
 
   if (motionLink.value) {
     serialOperations.push(
