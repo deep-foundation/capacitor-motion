@@ -21,5 +21,7 @@ export {type SubscribeToMotionChangesOptions} from './subscribe-to-motion-change
 export {insertMotion,InsertMotionOptions} from './insert-motion.js'
 export {updateMotion,UpdateMotionOptions} from './update-motion.js'
 
+export {MotionDecorator,createMotionDecorator} from './create-motion-decorator.js'
+
 
 export {Package,PackageOptions} from './package.js'
