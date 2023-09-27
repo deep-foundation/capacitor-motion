@@ -1,7 +1,9 @@
+import { PermissionStatus } from "./permission-status";
+
 /**
  * Requests motion permissions
  */
-export async function requestPermissions(): Promise<PermissionState> {
+export async function requestPermissions(): Promise<PermissionStatus> {
   if (DeviceMotionEvent && 'requestPermission' in DeviceMotionEvent && typeof DeviceMotionEvent.requestPermission === 'function') {
     return await DeviceMotionEvent.requestPermission();
   } else {
@@ -9,4 +11,3 @@ export async function requestPermissions(): Promise<PermissionState> {
   }
 }
 
-export type PermissionState = 'granted' | 'denied' | 'prompt'
