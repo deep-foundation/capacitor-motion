@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>PackageOptions | @deep-foundation/capacitor-motion</title><meta name="description" content="Documentation for @deep-foundation/capacitor-motion"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>useAccelerationSync | @deep-foundation/capacitor-motion</title><meta name="description" content="Documentation for @deep-foundation/capacitor-motion"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,11 +13,30 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">@deep-foundation/capacitor-motion</a></li>
-<li><a href="PackageOptions.html">PackageOptions</a></li></ul>
-<h1>Type alias PackageOptions</h1></div>
-<div class="tsd-signature"><span class="tsd-kind-type-alias">Package<wbr/>Options</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type ">Omit</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">BasePackageOptions</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">&quot;name&quot;</span><span class="tsd-signature-symbol">&gt;</span></div><aside class="tsd-sources">
+<li><a href="useAccelerationSync.html">useAccelerationSync</a></li></ul>
+<h1>Function useAccelerationSync</h1></div>
+<section class="tsd-panel">
+<ul class="tsd-signatures">
+<li class="tsd-signature tsd-anchor-link" id="useAccelerationSync"><span class="tsd-kind-call-signature">use<wbr/>Acceleration<wbr/>Sync</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">this</span>, <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><a href="#useAccelerationSync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>This hook subscribes to the acceleration event and saves the data to Deep</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">this</span>: <span class="tsd-signature-type ">MotionDecorator</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/UseAccelerationSyncOptions.html" class="tsd-signature-type tsd-kind-interface">UseAccelerationSyncOptions</a></h5></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+<div class="tsd-comment tsd-typography">
+<h4>Remarks</h4><p>It is not recommended to use this hook directly. Instead of <a href="WithAccelerationSync.html" class="tsd-kind-function">WithAccelerationSync</a></p>
+
+<h4>Example</h4><pre><code class="language-ts"><span class="hl-3">useAccelerationSync</span><span class="hl-1">({</span><br/><span class="hl-1">   </span><span class="hl-4">containerLinkId</span><br/><span class="hl-1">})</span>
+</code><button>Copy</button></pre>
+</div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/deep-foundation/capacitor-motion/blob/cd65ba9/src/package.ts#L773">src/package.ts:773</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/deep-foundation/capacitor-motion/blob/cd65ba9/src/react/hooks/use-acceleration-sync.ts#L25">src/react/hooks/use-acceleration-sync.ts:25</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -44,19 +63,19 @@
 <li><a href="../interfaces/UseOrientationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>UseOrientationSyncOptions</a></li>
 <li><a href="../interfaces/WithOperatingSystemCheckingOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>WithOperatingSystemCheckingOptions</a></li>
 <li><a href="../interfaces/WithPermissionsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>WithPermissionsOptions</a></li>
-<li><a href="InsertMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>InsertMotionOptions</a></li>
-<li><a href="MakeMotionValueUpdateSerialOperationsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MakeMotionValueUpdateSerialOperationsOptions</a></li>
-<li><a href="MotionInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MotionInfo</a></li>
-<li><a href="PackageOptions.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>PackageOptions</a></li>
-<li><a href="UpdateMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>UpdateMotionOptions</a></li>
-<li><a href="WithAccelerationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithAccelerationSyncOptions</a></li>
-<li><a href="WithMotionSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithMotionSyncOptions</a></li>
-<li><a href="WithOrientationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithOrientationSyncOptions</a></li>
-<li><a href="../functions/WithAccelerationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithAccelerationSync</a></li>
-<li><a href="../functions/WithMotionSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithMotionSync</a></li>
-<li><a href="../functions/WithOperatingSystemChecking.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOperatingSystemChecking</a></li>
-<li><a href="../functions/WithOrientationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOrientationSync</a></li>
-<li><a href="../functions/WithPermissions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithPermissions</a></li>
+<li><a href="../types/InsertMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>InsertMotionOptions</a></li>
+<li><a href="../types/MakeMotionValueUpdateSerialOperationsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MakeMotionValueUpdateSerialOperationsOptions</a></li>
+<li><a href="../types/MotionInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MotionInfo</a></li>
+<li><a href="../types/PackageOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>PackageOptions</a></li>
+<li><a href="../types/UpdateMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>UpdateMotionOptions</a></li>
+<li><a href="../types/WithAccelerationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithAccelerationSyncOptions</a></li>
+<li><a href="../types/WithMotionSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithMotionSyncOptions</a></li>
+<li><a href="../types/WithOrientationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithOrientationSyncOptions</a></li>
+<li><a href="WithAccelerationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithAccelerationSync</a></li>
+<li><a href="WithMotionSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithMotionSync</a></li>
+<li><a href="WithOperatingSystemChecking.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOperatingSystemChecking</a></li>
+<li><a href="WithOrientationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOrientationSync</a></li>
+<li><a href="WithPermissions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithPermissions</a></li>
 <li>Loading...</li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>

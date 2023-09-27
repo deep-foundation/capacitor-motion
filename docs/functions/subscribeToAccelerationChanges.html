@@ -17,7 +17,7 @@
 <h1>Function subscribeToAccelerationChanges</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="subscribeToAccelerationChanges"><span class="tsd-kind-call-signature">subscribe<wbr/>To<wbr/>Acceleration<wbr/>Changes</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">__namedParameters</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">PluginListenerHandle</span><span class="tsd-signature-symbol">&gt;</span><a href="#subscribeToAccelerationChanges" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="subscribeToAccelerationChanges"><span class="tsd-kind-call-signature">subscribe<wbr/>To<wbr/>Acceleration<wbr/>Changes</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">this</span>, <span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">PluginListenerHandle</span><span class="tsd-signature-symbol">&gt;</span><a href="#subscribeToAccelerationChanges" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
 <div class="tsd-comment tsd-typography"><p>Subscribes to acceleration changes and saves them</p>
 </div>
@@ -25,19 +25,21 @@
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">__namedParameters</span>: <a href="../interfaces/SubscribeToMotionChangesParam.html" class="tsd-signature-type tsd-kind-interface">SubscribeToMotionChangesParam</a></h5></li></ul></div>
+<h5><span class="tsd-kind-parameter">this</span>: <span class="tsd-signature-type ">MotionDecorator</span></h5></li>
+<li>
+<h5><span class="tsd-kind-parameter">options</span>: <a href="../interfaces/SubscribeToMotionChangesOptions.html" class="tsd-signature-type tsd-kind-interface">SubscribeToMotionChangesOptions</a></h5></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type ">PluginListenerHandle</span><span class="tsd-signature-symbol">&gt;</span></h4>
 <div class="tsd-comment tsd-typography">
 <h4>Remarks</h4><p>Motion permissions should be granted before calling this function by using requestMotionPermissions
-Acceleration data is saved by using <a href="getMotionValueUpdateSerialOperations.html" class="tsd-kind-function">getMotionValueUpdateSerialOperations</a> with <a href="../interfaces/GetMotionInsertSerialOperationsParam.html#containerLinkId" class="tsd-kind-property">GetMotionInsertSerialOperationsParam.containerLinkId</a> set to <a href="../interfaces/SubscribeToMotionChangesParam.html#deviceLinkId" class="tsd-kind-property">SubscribeToMotionChangesParam.deviceLinkId</a></p>
+Acceleration data is saved by using <a href="makeMotionValueUpdateOperations.html" class="tsd-kind-function">makeMotionValueUpdateOperations</a> with GetMotionInsertSerialOperationsOptions.containerLinkId set to <a href="../interfaces/SubscribeToMotionChangesOptions.html#deviceLinkId" class="tsd-kind-property">SubscribeToMotionChangesOptions.deviceLinkId</a></p>
 
-<h4>Example</h4><pre><code class="language-ts"><span class="hl-1">#### </span><span class="hl-4">Subscribe</span><span class="hl-1"> </span><span class="hl-4">to</span><span class="hl-1"> </span><span class="hl-4">acceleration</span><span class="hl-1"> </span><span class="hl-4">changes</span><br/><span class="hl-6">```ts</span><br/><span class="hl-6">const accelerationHandler = await subscribeToAccelerationChanges({</span><br/><span class="hl-6"> deep,</span><br/><span class="hl-6"> deviceLinkId,</span><br/><span class="hl-6">});</span>
+<h4>Example</h4><pre><code class="language-ts"><span class="hl-1">#### </span><span class="hl-4">Subscribe</span><span class="hl-1"> </span><span class="hl-4">to</span><span class="hl-1"> </span><span class="hl-4">acceleration</span><span class="hl-1"> </span><span class="hl-4">changes</span><br/><span class="hl-6">```ts</span><br/><span class="hl-6">const accelerationHandler = await subscribeToAccelerationChanges({</span><br/><span class="hl-6">   deviceLinkId,</span><br/><span class="hl-6">});</span>
 </code><button>Copy</button></pre>
 <pre><code>
 </code><button>Copy</button></pre>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/deep-foundation/capacitor-motion/blob/a2700ab/src/subscribe-to-acceleration-changes.ts#L25">src/subscribe-to-acceleration-changes.ts:25</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/deep-foundation/capacitor-motion/blob/cd65ba9/src/subscribe-to-acceleration-changes.ts#L25">src/subscribe-to-acceleration-changes.ts:25</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -57,26 +59,26 @@ Acceleration data is saved by using <a href="getMotionValueUpdateSerialOperation
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>@deep-foundation/capacitor-motion</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">
 <li><a href="../classes/Package.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>Package</a></li>
-<li><a href="../interfaces/GetMotionInsertSerialOperationsParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>GetMotionInsertSerialOperationsParam</a></li>
-<li><a href="../interfaces/SubscribeToMotionChangesParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>SubscribeToMotionChangesParam</a></li>
+<li><a href="../interfaces/MakeMotionInsertOperationsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>MakeMotionInsertOperationsOptions</a></li>
+<li><a href="../interfaces/SubscribeToMotionChangesOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>SubscribeToMotionChangesOptions</a></li>
+<li><a href="../interfaces/UseAccelerationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>UseAccelerationSyncOptions</a></li>
+<li><a href="../interfaces/UseMotionSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>UseMotionSyncOptions</a></li>
+<li><a href="../interfaces/UseOrientationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>UseOrientationSyncOptions</a></li>
 <li><a href="../interfaces/WithOperatingSystemCheckingOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>WithOperatingSystemCheckingOptions</a></li>
 <li><a href="../interfaces/WithPermissionsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>WithPermissionsOptions</a></li>
-<li><a href="../types/GetMotionValueUpdateSerialOperationsParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>GetMotionValueUpdateSerialOperationsParam</a></li>
+<li><a href="../types/InsertMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>InsertMotionOptions</a></li>
+<li><a href="../types/MakeMotionValueUpdateSerialOperationsOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MakeMotionValueUpdateSerialOperationsOptions</a></li>
 <li><a href="../types/MotionInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>MotionInfo</a></li>
 <li><a href="../types/PackageOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>PackageOptions</a></li>
-<li><a href="../types/WithAccelerationSubscriptionParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithAccelerationSubscriptionParam</a></li>
-<li><a href="../types/WithMotionSubscriptionParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithMotionSubscriptionParam</a></li>
-<li><a href="../types/WithOrientationSubscriptionParam.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithOrientationSubscriptionParam</a></li>
-<li><a href="WithAccelerationSubscription.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithAccelerationSubscription</a></li>
-<li><a href="WithMotionSubscription.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithMotionSubscription</a></li>
+<li><a href="../types/UpdateMotionOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>UpdateMotionOptions</a></li>
+<li><a href="../types/WithAccelerationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithAccelerationSyncOptions</a></li>
+<li><a href="../types/WithMotionSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithMotionSyncOptions</a></li>
+<li><a href="../types/WithOrientationSyncOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>WithOrientationSyncOptions</a></li>
+<li><a href="WithAccelerationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithAccelerationSync</a></li>
+<li><a href="WithMotionSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithMotionSync</a></li>
 <li><a href="WithOperatingSystemChecking.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOperatingSystemChecking</a></li>
-<li><a href="WithOrientationSubscription.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOrientationSubscription</a></li>
+<li><a href="WithOrientationSync.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithOrientationSync</a></li>
 <li><a href="WithPermissions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>WithPermissions</a></li>
-<li><a href="getMotionInsertSerialOperations.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getMotionInsertSerialOperations</a></li>
-<li><a href="getMotionValueUpdateSerialOperations.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getMotionValueUpdateSerialOperations</a></li>
-<li><a href="requestPermissions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>requestPermissions</a></li>
-<li><a href="subscribeToAccelerationChanges.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>subscribeToAccelerationChanges</a></li>
-<li><a href="subscribeToOrientationChanges.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>subscribeToOrientationChanges</a></li>
 <li>Loading...</li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>
