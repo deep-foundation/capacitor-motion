@@ -1,9 +1,9 @@
 
 export {WithAccelerationSync ,type WithAccelerationSyncOptions } from './react/components/with-acceleration-sync.js'
 export {WithMotionSync, type WithMotionSyncOptions} from './react/components/with-motion-sync.js'
-export {WithOperatingSystemChecking , type WithOperatingSystemCheckingOptions} from './react/components/with-operating-system-checking.js'
+export {WithOperatingSystemChecking, WithOperatingSystemChecking as WithMotionOperatingSystemChecking, type WithOperatingSystemCheckingOptions, WithOperatingSystemCheckingOptions as WithMotionOperatingSystemCheckingOptions} from './react/components/with-operating-system-checking.js'
 export {WithOrientationSync , type WithOrientationSyncOptions } from './react/components/with-orientation-sync.js'
-export {WithPermissions,WithPermissionsOptions} from './react/components/with-permissions.js'
+export {WithPermissions,WithPermissionsOptions, WithPermissions as WithMotionPermissions, WithPermissionsOptions as WithMotionPermissionsOptions} from './react/components/with-permissions.js'
 
 export {useMotionSync, UseMotionSyncOptions} from './react/hooks/use-motion-sync.js'
 export {useAccelerationSync,UseAccelerationSyncOptions} from './react/hooks/use-acceleration-sync.js'
