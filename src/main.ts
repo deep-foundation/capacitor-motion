@@ -17,10 +17,10 @@ export {
   type WithOrientationSyncOptions,
 } from "./react/components/with-orientation-sync.js";
 export {
-  WithPermissions,
-  WithPermissionsOptions,
-  WithPermissions as WithMotionPermissions,
-  WithPermissionsOptions as WithMotionPermissionsOptions,
+  WithPermissionsRequesting ,
+  WithPermissionsRequestingOptions,
+  WithPermissionsRequesting as WithMotionPermissionsRequesting,
+  WithPermissionsRequestingOptions as WithMotionPermissionsRequestingOptions,
 } from "./react/components/with-permissions.js";
 
 export {

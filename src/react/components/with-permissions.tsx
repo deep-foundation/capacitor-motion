@@ -3,7 +3,7 @@ import { usePermissionsRequest } from "../hooks/use-permissions-request.js";
 /**
  * A component that requires permissions and renders different content based on the permissions state
  */
-export function WithPermissions(options: WithPermissionsOptions) {
+export function WithPermissionsRequesting(options: WithPermissionsRequestingOptions) {
   const permissionsState = usePermissionsRequest();
   if(permissionsState === undefined) {
     return options.renderIfLoading();
@@ -16,7 +16,7 @@ export function WithPermissions(options: WithPermissionsOptions) {
   }
 }
 
-export interface WithPermissionsOptions {
+export interface WithPermissionsRequestingOptions {
   renderIfLoading: () => JSX.Element;
   renderIfGranted: () => JSX.Element;
   renderIfDenied: () => JSX.Element;
