@@ -6,7 +6,7 @@ import { MotionDecorator } from "../../create-motion-decorator.js";
 /**
  * A component that requires permissions and renders different content based on the permissions state
  */
-export function WithPermissions(this: MotionDecorator, options: WithPermissionsOptions) {
+export function WithPermissions(options: WithPermissionsOptions) {
   const permissionsState = usePermissionsRequest();
   if(permissionsState === undefined) {
     return options.renderIfLoading();

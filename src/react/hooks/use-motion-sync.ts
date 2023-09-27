@@ -25,15 +25,14 @@ useMotionSync({
 ```
  */
 export function useMotionSync(
-  this: MotionDecorator,
   options: UseMotionSyncOptions
 ) {
-  const {  containerLinkId = this.linkId! } = options;
-  const $package = new Package({ deep: this });
+  const {  deep,containerLinkId = deep.linkId! } = options;
+  const $package = new Package({ deep: deep });
   const debug = packageLog.extend(useMotionSync.name);
   debug({ options });
 
-  this.useAccelerationSync({containerLinkId});
+  useAccelerationSync({deep, containerLinkId});
   
 }
 
@@ -41,7 +40,7 @@ export interface UseMotionSyncOptions {
   /**
    * A Deep client instance
    */
-  
+  deep: MotionDecorator
   /**
    * A container link id
    * 

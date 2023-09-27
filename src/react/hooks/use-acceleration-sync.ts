@@ -23,18 +23,17 @@ useAccelerationSync({
 ```
  */
 export function useAccelerationSync(
-  this: MotionDecorator,
   options: UseAccelerationSyncOptions
 ) {
-  const { containerLinkId = this.linkId! } = options;
-  const $package = new Package({ deep: this });
+  const { deep, containerLinkId = deep.linkId! } = options;
+  const $package = new Package({ deep: deep });
   const debug = createDebugMessages(
     `${$package.name}:useAccelerationSync`
   );
   debug({ options });
 
   useEffect(() => {
-    const accelerationHandlerFunction = this.getSubscriptionHandler({
+    const accelerationHandlerFunction = deep.getSubscriptionHandler({
       containerLinkId,
     });
     const accelerationHandler = Motion.addListener(
@@ -45,10 +44,11 @@ export function useAccelerationSync(
     return () => {
       accelerationHandler.remove();
     };
-  }, [this, containerLinkId]);
+  }, [deep, containerLinkId]);
 }
 
 export interface UseAccelerationSyncOptions {
+  deep: MotionDecorator;
   /**
    * A container link id
    * 

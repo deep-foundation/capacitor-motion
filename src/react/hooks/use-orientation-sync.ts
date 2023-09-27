@@ -19,13 +19,13 @@ useOrientationSync({
 })
 ```
  */
-export function useOrientationSync(this: MotionDecorator, options:UseOrientationSyncOptions) {
-   const {  containerLinkId = this.linkId!} = options;
-   const debug = createDebugMessages(`${this.capacitorMotionPackage.name}:useOrientationSync`)
+export function useOrientationSync(options:UseOrientationSyncOptions) {
+   const {  deep,containerLinkId = deep.linkId!} = options;
+   const debug = createDebugMessages(`${deep.capacitorMotionPackage.name}:useOrientationSync`)
    debug({options})
 
     useEffect(() => {
-      const accelerationHandlerFunction = this.getSubscriptionHandler({
+      const accelerationHandlerFunction = deep.getSubscriptionHandler({
                   containerLinkId,
       })
       const orientationHandler = Motion.addListener('orientation', (event) => {
@@ -36,14 +36,14 @@ export function useOrientationSync(this: MotionDecorator, options:UseOrientation
       return () => {
          orientationHandler.remove();
       }
-   }, [this, containerLinkId]) 
+   }, [deep, containerLinkId]) 
 }
 
 export interface UseOrientationSyncOptions {
    /**
     * A Deep client instance
     */
-   
+   deep: MotionDecorator;
    /**
     * A container link id
     * 

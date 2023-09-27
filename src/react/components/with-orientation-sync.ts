@@ -16,12 +16,10 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithOrientationSync(this: MotionDecorator, options: WithOrientationSyncOptions) {
-   const {   containerLinkId, children } = options;
+export function WithOrientationSync(options: WithOrientationSyncOptions) {
+   const {   children } = options;
 
-   this.useOrientationSync({
-      containerLinkId
-   })
+   useOrientationSync(options)
 
    return children;
 }

@@ -16,10 +16,10 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithAccelerationSync(this: MotionDecorator,options: WithAccelerationSyncOptions) {
+export function WithAccelerationSync(options: WithAccelerationSyncOptions) {
    const { children } = options;
 
-   this.useAccelerationSync(options)
+   useAccelerationSync(options)
 
    return children;
 }

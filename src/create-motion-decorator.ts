@@ -33,10 +33,6 @@ export type MotionDecorator<TDeepClient extends DeepClientInstance = DeepClientI
   "@deep-foundation/capacitor-motion": Package,
   capacitorMotionPackage: Package,
   getSubscriptionHandler: typeof getSubscriptionHandler;
-  useAccelerationSync: typeof useAccelerationSync;
-  useOrientationSync: typeof useOrientationSync;
-  useMotionSync: typeof useMotionSync;
-  WithMotionSync: typeof WithMotionSync;
   insertMotion: typeof insertMotion;
   makeMotionInsertOperations: typeof makeMotionInsertOperations
   makeMotionValueUpdateOperations: typeof makeMotionValueUpdateOperations 

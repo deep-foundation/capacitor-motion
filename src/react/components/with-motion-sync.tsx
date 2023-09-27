@@ -19,8 +19,8 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithMotionSync(this: MotionDecorator ,options: WithMotionSyncOptions) {
-   this.useMotionSync(options)
+export function WithMotionSync(options: WithMotionSyncOptions) {
+   useMotionSync(options)
 
    return options.children
 }
