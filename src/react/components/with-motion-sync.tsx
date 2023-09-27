@@ -1,5 +1,6 @@
 import { MotionDecorator } from "../../create-motion-decorator.js";
 import { UseAccelerationSyncOptions, useAccelerationSync } from "../hooks/use-acceleration-sync.js";
+import { useMotionSync } from "../hooks/use-motion-sync.js";
 import { WithAccelerationSync, WithAccelerationSyncOptions } from "./with-acceleration-sync.js";
 import { WithOrientationSync, WithOrientationSyncOptions } from "./with-orientation-sync.js";
 
@@ -19,6 +20,8 @@ function MyComponent(deep, deviceLinkId) {
 ```
  */
 export function WithMotionSync(this: MotionDecorator ,options: WithMotionSyncOptions) {
+   this.useMotionSync(options)
+
    return options.children
 }
 

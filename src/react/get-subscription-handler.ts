@@ -46,9 +46,9 @@ useEffect(() => {
 }, [deep, containerLinkId]) 
 ```
  */
-export function getSubscriptionHandler(options: GetSubscriptionHandlerOptions) {
+export function getSubscriptionHandler(this: MotionDecorator,options: GetSubscriptionHandlerOptions) {
   const {  containerLinkId } = options;
-  const log = createDebugMessages(`${deep.capacitorMotionPackage.name}:getSubscriptionHandler`);
+  const log = createDebugMessages(`${this.capacitorMotionPackage.name}:getSubscriptionHandler`);
   log({ options });
   const deep = this;
 
@@ -98,10 +98,6 @@ export function getSubscriptionHandler(options: GetSubscriptionHandlerOptions) {
 }
 
 export interface GetSubscriptionHandlerOptions {
-  /**
-   * A Deep client instance
-   */
-  deep: DeepClient;
   /**
    * A container link id
    */

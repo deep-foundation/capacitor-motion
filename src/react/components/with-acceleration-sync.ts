@@ -16,12 +16,10 @@ function MyComponent(deep, deviceLinkId) {
 }
 ```
  */
-export function WithAccelerationSync(options: WithAccelerationSyncOptions) {
-   const {deep,  containerLinkId, children } = options;
+export function WithAccelerationSync(this: MotionDecorator,options: WithAccelerationSyncOptions) {
+   const { children } = options;
 
-   deep.useAccelerationSync({
-      containerLinkId
-   })
+   this.useAccelerationSync(options)
 
    return children;
 }

@@ -9,6 +9,7 @@ import { getSubscriptionHandler } from '../get-subscription-handler.js';
 import { Package } from '../../package.js';
 import { useAccelerationSync } from './use-acceleration-sync.js';
 import { MotionDecorator } from '../../create-motion-decorator.js';
+import { packageLog } from '../../package-log.js';
 
 /**
  * This hook subscribes to the acceleration and motion event and saves the data to Deep
@@ -29,9 +30,7 @@ export function useMotionSync(
 ) {
   const {  containerLinkId = this.linkId! } = options;
   const $package = new Package({ deep: this });
-  const debug = createDebugMessages(
-    `${$package.name}:useMotionSync`
-  );
+  const debug = packageLog.extend(useMotionSync.name);
   debug({ options });
 
   this.useAccelerationSync({containerLinkId});
