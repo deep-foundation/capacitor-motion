@@ -41,8 +41,8 @@ export {
   useOrientationSync,
   UseOrientationSyncOptions,
 } from "./react/hooks/use-orientation-sync.js";
-export { usePermissionsRequest } from "./react/hooks/use-permissions-request.js";
-export {usePermissionsStatus} from './react/hooks/use-permissions-status.js'
+export { usePermissionsRequest, usePermissionsRequest as useMotionPermissionsRequest } from "./react/hooks/use-permissions-request.js";
+export {usePermissionsStatus, usePermissionsStatus as useMotionPermissionsStatus} from './react/hooks/use-permissions-status.js'
 
 export {
   makeMotionInsertOperations,
