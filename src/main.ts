@@ -21,7 +21,13 @@ export {
   WithPermissionsRequestingOptions,
   WithPermissionsRequesting as WithMotionPermissionsRequesting,
   WithPermissionsRequestingOptions as WithMotionPermissionsRequestingOptions,
-} from "./react/components/with-permissions.js";
+} from "./react/components/with-permissions-requesting.js";
+export {
+  WithPermissionsStatus,
+  WithPermissionsStatus as WithMotionPermissionsStatus,
+  WithPermissionsStatusOptions,
+  WithPermissionsStatusOptions as WithMotionPermissionsStatusOptions,
+} from './react/components/with-permissions-status.js'
 
 export {
   useMotionSync,
@@ -36,6 +42,7 @@ export {
   UseOrientationSyncOptions,
 } from "./react/hooks/use-orientation-sync.js";
 export { usePermissionsRequest } from "./react/hooks/use-permissions-request.js";
+export {usePermissionsStatus} from './react/hooks/use-permissions-status.js'
 
 export {
   makeMotionInsertOperations,
