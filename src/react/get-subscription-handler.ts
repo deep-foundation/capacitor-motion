@@ -5,21 +5,21 @@ import {
 import { MotionInfo } from '../motion-info.js';
 import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
 import createDebugMessages from 'debug';
-import { getMotionInsertSerialOperations } from '../get-motion-insert-serial-operations.js';
-import { getMotionValueUpdateSerialOperations } from '../get-motion-value-update-serial-operations.js';
+import { makeMotionInsertOperations } from '../make-motion-insert-operations.js';
+import { makeMotionValueUpdateOperations } from '../make-motion-value-update-operations.js';
 import { Package } from '../package.js';
+import { MotionDecorator } from '../create-motion-decorator.js';
 
 /**
  * Returns a subscription handler for the acceleration/orientation event
  * 
- * @remarks It is not recommended to use this function directly. Instead use {@link WithUseAccelerationSubscription} or {@link WithUseOrientationSubscription}
+ * @remarks It is not recommended to use this function directly. Instead use {@link WithAccelerationSync} or {@link WithOrientationSync}
  * 
  * @example
  * #### Handle acceleration event
 ```ts
 const accelerationHandlerFunction = getSubscriptionHandler({
-  deep,
-  containerLinkId,
+    containerLinkId,
 });
 const accelerationHandler = Motion.addListener(
   'accel',
@@ -33,8 +33,7 @@ return () => {
 ```ts
 useEffect(() => {
   const accelerationHandlerFunction = getSubscriptionHandler({
-      deep,
-      containerLinkId,
+            containerLinkId,
   })
   const orientationHandler = Motion.addListener('orientation', (event) => {
       accelerationHandlerFunction({
@@ -47,21 +46,20 @@ useEffect(() => {
 }, [deep, containerLinkId]) 
 ```
  */
-export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
-  const { deep, containerLinkId } = param;
-  const $package = new Package({ deep });
-  const debug = createDebugMessages(`${$package.name}:getSubscriptionHandler`);
-  debug({ param });
+export function getSubscriptionHandler(options: GetSubscriptionHandlerOptions) {
+  const {  containerLinkId } = options;
+  const log = createDebugMessages(`${deep.capacitorMotionPackage.name}:getSubscriptionHandler`);
+  log({ options });
+  const deep = this;
 
   return subscriptionHandler;
 
+
   async function subscriptionHandler(paramInfo: MotionInfo) {
-    const debug = createDebugMessages(
-      `${$package.name}:getSubscriptionHandler:subscriptionHandler`
-    );
+    const subscriptionHandlerLog = log.extend(subscriptionHandler.name)
     const motionSelectData: BoolExpLink = {
       type_id: {
-        _id: [$package.name, $package.Motion.name]
+        _id: [deep.capacitorMotionPackage.name, deep.capacitorMotionPackage.Motion.name]
       },
       in: {
         type_id: {
@@ -70,38 +68,36 @@ export function getSubscriptionHandler(param: GetSubscriptionHandlerParam) {
         from_id: containerLinkId,
       },
     };
-    debug({ motionSelectData });
+    subscriptionHandlerLog({ motionSelectData });
     const {
       data: [motionLink],
     } = await deep.select(motionSelectData);
-    debug({ motionLink });
+    subscriptionHandlerLog({ motionLink });
     const info = {
       ...paramInfo,
       ...motionLink?.value?.value
     }
-    let serialOperations: Array<SerialOperation>;
+    let operations: Array<SerialOperation>;
     if (!motionLink) {
-      serialOperations = await getMotionInsertSerialOperations({
-        deep,
-        info,
+      operations = await deep.makeMotionInsertOperations({
+                info,
         containerLinkId
-      });
+      }).then(result => result.operations);
     } else {
-      serialOperations = await getMotionValueUpdateSerialOperations({
-        deep,
-        motionLink,
+      operations = await deep.makeMotionValueUpdateOperations({
+                motionLink,
         info,
       });
     }
-    debug({ serialOperations });
+    subscriptionHandlerLog({ operations });
     const serialResult = await deep.serial({
-      operations: serialOperations,
+      operations: operations,
     });
-    debug({ serialResult });
+    subscriptionHandlerLog({ serialResult });
   }
 }
 
-export interface GetSubscriptionHandlerParam {
+export interface GetSubscriptionHandlerOptions {
   /**
    * A Deep client instance
    */

@@ -1,41 +1,40 @@
 import { Motion } from '@capacitor/motion';
-import { getMotionValueUpdateSerialOperations } from './get-motion-value-update-serial-operations.js';
+import { makeMotionValueUpdateOperations } from './make-motion-value-update-operations.js';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param.js';
-import { getMotionInsertSerialOperations } from './get-motion-insert-serial-operations.js';
+import { SubscribeToMotionChangesOptions } from './subscribe-to-motion-changes-options.js';
+import { makeMotionInsertOperations } from './make-motion-insert-operations.js';
+import { MotionDecorator } from './create-motion-decorator.js';
 
 /**
  * Subscribes to acceleration changes and saves them 
  * 
  * @remarks
  * Motion permissions should be granted before calling this function by using {@link requestMotionPermissions}
- * Acceleration data is saved by using {@link getMotionValueUpdateSerialOperations} with {@link GetMotionInsertSerialOperationsParam.containerLinkId} set to {@link SubscribeToMotionChangesParam.deviceLinkId}
+ * Acceleration data is saved by using {@link makeMotionValueUpdateOperations} with {@link GetMotionInsertSerialOperationsOptions.containerLinkId} set to {@link SubscribeToMotionChangesOptions.deviceLinkId}
  * 
  * @example
 ```ts
 #### Subscribe to acceleration changes
 ```ts
 const accelerationHandler = await subscribeToAccelerationChanges({
-  deep,
-  deviceLinkId,
+    deviceLinkId,
 });
 ```
 ```
  */
-export async function subscribeToAccelerationChanges({
-  deep,
-  deviceLinkId,
-}: SubscribeToMotionChangesParam) {
+export async function subscribeToAccelerationChanges(this: MotionDecorator, options: SubscribeToMotionChangesOptions) {
+  const {
+    deviceLinkId,
+} = options;
   console.log('subscribeToAccelerationChanges');
   return Motion.addListener('accel', async (accelData) => {
     console.log('accelEvent', accelData);
-    const serialOperations = await getMotionInsertSerialOperations({
-      deep,
-      containerLinkId: deviceLinkId,
+    const {operations} = await this.makeMotionInsertOperations({
+            containerLinkId: deviceLinkId,
       info: accelData,
     });
-    await deep.serial({
-      operations: serialOperations,
+    await this.serial({
+      operations: operations,
     })
   });
 }

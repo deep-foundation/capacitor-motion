@@ -1,10 +1,10 @@
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client.js";
 
-export interface SubscribeToMotionChangesParam {
+export interface SubscribeToMotionChangesOptions {
    /**
     * A Deep client instance
     */
-   deep: DeepClient;
+   
    /**
     * A Device link ID
     */

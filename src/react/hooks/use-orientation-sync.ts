@@ -4,31 +4,29 @@ import { useEffect } from "react";
 import { getSubscriptionHandler } from "../get-subscription-handler.js";
 import createDebugMessages from 'debug';
 import { Package } from "../../package.js";
+import { MotionDecorator } from "../../create-motion-decorator.js";
 
 /**
  * This hook subscribes to the orientation event and saves the data to Deep
  * 
  * @remarks
- * It is not recommended to use this hook directly. Instead of {@link WithUseOrientationSubscription}
+ * It is not recommended to use this hook directly. Instead of {@link WithOrientationSync}
  * 
  * @exaple
 ```ts
-useOrientationSubscription({
-   deep,
-   containerLinkId
+useOrientationSync({
+      containerLinkId
 })
 ```
  */
-export function useOrientationSubscription(param:UseOrientationSubscriptionParam) {
-   const { deep, containerLinkId = deep.linkId!} = param;
-   const $package = new Package({deep})
-   const debug = createDebugMessages(`${$package.name}:useOrientationSubscription`)
-   debug({param})
+export function useOrientationSync(this: MotionDecorator, options:UseOrientationSyncOptions) {
+   const {  containerLinkId = this.linkId!} = options;
+   const debug = createDebugMessages(`${this.capacitorMotionPackage.name}:useOrientationSync`)
+   debug({options})
 
     useEffect(() => {
-      const accelerationHandlerFunction = getSubscriptionHandler({
-         deep,
-         containerLinkId,
+      const accelerationHandlerFunction = this.getSubscriptionHandler({
+                  containerLinkId,
       })
       const orientationHandler = Motion.addListener('orientation', (event) => {
          accelerationHandlerFunction({
@@ -38,14 +36,14 @@ export function useOrientationSubscription(param:UseOrientationSubscriptionParam
       return () => {
          orientationHandler.remove();
       }
-   }, [deep, containerLinkId]) 
+   }, [this, containerLinkId]) 
 }
 
-export interface UseOrientationSubscriptionParam {
+export interface UseOrientationSyncOptions {
    /**
     * A Deep client instance
     */
-   deep: DeepClient;
+   
    /**
     * A container link id
     * 

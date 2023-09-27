@@ -1,41 +1,40 @@
 import { Motion } from '@capacitor/motion';
-import { getMotionValueUpdateSerialOperations } from './get-motion-value-update-serial-operations.js';
+import { makeMotionValueUpdateOperations } from './make-motion-value-update-operations.js';
 import { DeepClient } from '@deep-foundation/deeplinks/imports/client.js';
-import { SubscribeToMotionChangesParam } from './subscribe-to-motion-changes-param.js';
-import { getMotionInsertSerialOperations } from './get-motion-insert-serial-operations.js';
+import { SubscribeToMotionChangesOptions } from './subscribe-to-motion-changes-options.js';
+import { makeMotionInsertOperations } from './make-motion-insert-operations.js';
+import { MotionDecorator } from './create-motion-decorator.js';
 
 /**
  * Subscribes to orientation changes and saves them
  * 
  * @remarks
  * Motion permissions should be granted before calling this function by using {@link requestMotionPermissions}
- * Orientation data is saved by using {@link getMotionValueUpdateSerialOperations} with {@link GetMotionInsertSerialOperationsParam.containerLinkId} set to {@link SubscribeToMotionChangesParam.deviceLinkId}
+ * Orientation data is saved by using {@link makeMotionValueUpdateOperations} with {@link GetMotionInsertSerialOperationsOptions.containerLinkId} set to {@link SubscribeToMotionChangesOptions.deviceLinkId}
  * 
  * @example
 ```ts
 #### Subscribe to orientation changes
 ```ts
 const newOrientationHandler = await subscribeToOrientationChanges({
-  deep,
-  deviceLinkId,
+    deviceLinkId,
 });
 ```
 ```
  */
-export async function subscribeToOrientationChanges({
-  deep,
-  deviceLinkId,
-}: SubscribeToMotionChangesParam) {
+export async function subscribeToOrientationChanges(this: MotionDecorator,options: SubscribeToMotionChangesOptions) {
+  const {
+    deviceLinkId,
+} = options
   return Motion.addListener('orientation', async (rotationRate) => {
-    const serialOperations = await getMotionInsertSerialOperations({
-      deep,
-      containerLinkId: deviceLinkId,
+    const {operations} = await this.makeMotionInsertOperations({
+            containerLinkId: deviceLinkId,
       info: {
         rotationRate,
       },
     });
-    await deep.serial({
-      operations: serialOperations,
+    await this.serial({
+      operations: operations,
     })
   });
 }

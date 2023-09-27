@@ -7,34 +7,33 @@ import { useEffect } from 'react';
 import createDebugMessages from 'debug';
 import { getSubscriptionHandler } from '../get-subscription-handler.js';
 import { Package } from '../../package.js';
+import { MotionDecorator } from '../../create-motion-decorator.js';
 
 /**
  * This hook subscribes to the acceleration event and saves the data to Deep
  *
  * @remarks
- * It is not recommended to use this hook directly. Instead of {@link WithUseAccelerationSubscription}
+ * It is not recommended to use this hook directly. Instead of {@link WithAccelerationSync}
  * 
  * @example
 ```ts
-useAccelerationSubscription({
-  deep,
-  containerLinkId
+useAccelerationSync({
+    containerLinkId
 })
 ```
  */
-export function useAccelerationSubscription(
-  param: UseAccelerationSubscriptionParam
+export function useAccelerationSync(
+
+  options: UseAccelerationSyncOptions
 ) {
-  const { deep, containerLinkId = deep.linkId! } = param;
-  const $package = new Package({ deep });
+  const {  deep, containerLinkId = deep.linkId! } = options;
   const debug = createDebugMessages(
-    `${$package.name}:useAccelerationSubscription`
+    `${deep.capacitorMotionPackage.name}:useAccelerationSync`
   );
-  debug({ param });
+  debug({ options });
 
   useEffect(() => {
-    const accelerationHandlerFunction = getSubscriptionHandler({
-      deep,
+    const accelerationHandlerFunction = getSubscriptionHandler.call(deep, {
       containerLinkId,
     });
     const accelerationHandler = Motion.addListener(
@@ -48,7 +47,7 @@ export function useAccelerationSubscription(
   }, [deep, containerLinkId]);
 }
 
-export interface UseAccelerationSubscriptionParam {
+export interface UseAccelerationSyncOptions {
   /**
    * A Deep client instance
    */
