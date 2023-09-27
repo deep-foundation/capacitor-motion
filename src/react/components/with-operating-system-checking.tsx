@@ -1,6 +1,6 @@
 import { DeviceInfo, Device } from "@capacitor/device"
 import { useState, useEffect } from "react"
-import { MotionDecorator } from "../../create-motion-decorator"
+import { MotionDecorator } from "../../create-motion-decorator.js"
 
 export function WithOperatingSystemChecking(options: WithOperatingSystemCheckingOptions) {
   const { renderIfNotSupported, renderIfSupported, renderIfLoading } = options

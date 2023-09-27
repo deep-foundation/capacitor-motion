@@ -1,5 +1,5 @@
-import { MotionDecorator } from "./create-motion-decorator";
-import { MakeMotionInsertOperationsOptions, makeMotionInsertOperations } from "./make-motion-insert-operations";
+import { MotionDecorator } from "./create-motion-decorator.js";
+import { MakeMotionInsertOperationsOptions, makeMotionInsertOperations } from "./make-motion-insert-operations.js";
 
 export async function insertMotion(this: MotionDecorator, options: InsertMotionOptions) {
   const {operations} = await this.makeMotionInsertOperations(options);

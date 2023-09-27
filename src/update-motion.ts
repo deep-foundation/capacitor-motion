@@ -1,6 +1,6 @@
-import { MotionDecorator } from "./create-motion-decorator";
-import { MakeMotionInsertOperationsOptions } from "./make-motion-insert-operations";
-import { MakeMotionValueUpdateSerialOperationsOptions, makeMotionValueUpdateOperations } from "./make-motion-value-update-operations";
+import { MotionDecorator } from "./create-motion-decorator.js";
+import { MakeMotionInsertOperationsOptions } from "./make-motion-insert-operations.js";
+import { MakeMotionValueUpdateSerialOperationsOptions, makeMotionValueUpdateOperations } from "./make-motion-value-update-operations.js";
 
 export async function updateMotion(this: MotionDecorator,options: UpdateMotionOptions) {
   const operations = await this.makeMotionValueUpdateOperations(options);

@@ -1,4 +1,4 @@
-import { PermissionStatus } from "./permission-status";
+import { PermissionStatus } from "./permission-status.js";
 
 /**
  * Requests motion permissions

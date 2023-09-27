@@ -3,7 +3,7 @@ import {
   SerialOperation,
 } from '@deep-foundation/deeplinks/imports/client.js';
 import { MotionInfo } from '../motion-info.js';
-import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types';
+import { BoolExpLink } from '@deep-foundation/deeplinks/imports/client_types.js';
 import createDebugMessages from 'debug';
 import { makeMotionInsertOperations } from '../make-motion-insert-operations.js';
 import { makeMotionValueUpdateOperations } from '../make-motion-value-update-operations.js';
