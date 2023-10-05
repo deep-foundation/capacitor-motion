@@ -22,7 +22,7 @@ function MyComponent(deep, deviceLinkId) {
 export function WithMotionSync(options: WithMotionSyncOptions) {
    useMotionSync(options)
 
-   return options.children
+   return options.children ?? null
 }
 
 export type WithMotionSyncOptions = WithAccelerationSyncOptions & WithOrientationSyncOptions;
