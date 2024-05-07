@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/deep-foundation/capacitor-motion"
   },
-  "version": "8.0.0-dev.9",
+  "version": "8.0.0-dev.10",
   "type": "module",
   "scripts": {
     "library:build:clean": "fse remove dist && npm run library:build:dirty",
@@ -33,6 +33,7 @@
   "dependencies": {
     "@deep-foundation/capacitor-device": "~10.0.1",
     "@deep-foundation/core": "~0.0.2",
+    "@deep-foundation/tsx": "^0.0.5",
     "@freephoenix888/object-to-links-async-converter": "~0.0.10",
     "debug": "^4.3.4",
     "deep-equal": "^2.2.2"
