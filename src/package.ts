@@ -21,7 +21,7 @@ const {name: packageName} = package;
 const package = new Package({deep});
 const motionRotationRateGammaTypeLinkId = await package["MotionRotationRateGamma"].id();
 const motionTypeLinkId = await package["Motion"].id();
-const configFor@freephoenix888/object-to-links-async-converterTypeLinkId = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].id();
+const configFor@deep-foundation/object-to-links-async-converterTypeLinkId = await package["ConfigFor@deep-foundation/object-to-links-async-converter"].id();
 const handleMotionUpdateTypeLinkId = await package["HandleMotionUpdate"].id();
 const motionAccelerationTypeLinkId = await package["MotionAcceleration"].id();
 const motionAccelerationZTypeLinkId = await package["MotionAccelerationZ"].id();
@@ -60,7 +60,7 @@ const package = new Package({deep});
 await package.applyMinilinks();
 const motionRotationRateGammaTypeLinkId = package["MotionRotationRateGamma"].idLocal();
 const motionTypeLinkId = package["Motion"].idLocal();
-const configFor@freephoenix888/object-to-links-async-converterTypeLinkId = package["ConfigFor@freephoenix888/object-to-links-async-converter"].idLocal();
+const configFor@deep-foundation/object-to-links-async-converterTypeLinkId = package["ConfigFor@deep-foundation/object-to-links-async-converter"].idLocal();
 const handleMotionUpdateTypeLinkId = package["HandleMotionUpdate"].idLocal();
 const motionAccelerationTypeLinkId = package["MotionAcceleration"].idLocal();
 const motionAccelerationZTypeLinkId = package["MotionAccelerationZ"].idLocal();
@@ -97,7 +97,7 @@ const typeOfValueOfMotionRotationRateGammaTypeLinkId = package["TypeOfValueOfMot
 const package = new Package({deep});
 const motionRotationRateGamma = package["MotionRotationRateGamma"].name;
 const motion = package["Motion"].name;
-const configFor@freephoenix888/object-to-links-async-converter = package["ConfigFor@freephoenix888/object-to-links-async-converter"].name;
+const configFor@deep-foundation/object-to-links-async-converter = package["ConfigFor@deep-foundation/object-to-links-async-converter"].name;
 const handleMotionUpdate = package["HandleMotionUpdate"].name;
 const motionAcceleration = package["MotionAcceleration"].name;
 const motionAccelerationZ = package["MotionAccelerationZ"].name;
@@ -180,23 +180,23 @@ export class Package extends BasePackage {
       public "Motion" = this.createEntity("Motion");
       /**
       @example
-      #### Use id method to get the id of the ConfigFor@freephoenix888/object-to-links-async-converter link
+      #### Use id method to get the id of the ConfigFor@deep-foundation/object-to-links-async-converter link
       ```ts
       const package = new Package({deep});
-      const configFor@freephoenix888/object-to-links-async-converterTypeLinkId = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].id();
+      const configFor@deep-foundation/object-to-links-async-converterTypeLinkId = await package["ConfigFor@deep-foundation/object-to-links-async-converter"].id();
       ```
-      #### Use localId method to get the local id of the ConfigFor@freephoenix888/object-to-links-async-converter link
+      #### Use localId method to get the local id of the ConfigFor@deep-foundation/object-to-links-async-converter link
       ```ts
       const package = new Package({deep});
-      const configFor@freephoenix888/object-to-links-async-converterTypeLinkId = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].localId();
+      const configFor@deep-foundation/object-to-links-async-converterTypeLinkId = await package["ConfigFor@deep-foundation/object-to-links-async-converter"].localId();
       ```
-      #### Use name field to get the name of the ConfigFor@freephoenix888/object-to-links-async-converter link
+      #### Use name field to get the name of the ConfigFor@deep-foundation/object-to-links-async-converter link
       ```ts
       const package = new Package({deep});
-      const configFor@freephoenix888/object-to-links-async-converter = await package["ConfigFor@freephoenix888/object-to-links-async-converter"].name;
+      const configFor@deep-foundation/object-to-links-async-converter = await package["ConfigFor@deep-foundation/object-to-links-async-converter"].name;
       ```
       */
-      public "ConfigFor@freephoenix888/object-to-links-async-converter" = this.createEntity("ConfigFor@freephoenix888/object-to-links-async-converter");
+      public "ConfigFor@deep-foundation/object-to-links-async-converter" = this.createEntity("ConfigFor@deep-foundation/object-to-links-async-converter");
       /**
       @example
       #### Use id method to get the id of the HandleMotionUpdate link
