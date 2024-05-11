@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/deep-foundation/capacitor-motion"
   },
-  "version": "8.0.0-dev.12",
+  "version": "8.0.0-dev.13",
   "type": "module",
   "scripts": {
     "library:build:clean": "fse remove dist && npm run library:build:dirty",
@@ -41,8 +41,8 @@
   "peerDependencies": {
     "@capacitor/device": "~5.0.4",
     "@capacitor/motion": "~5.0.4",
-    "@deep-foundation/deeplinks": "~0.0.312",
-    "react": "~18.2.0"
+    "@deep-foundation/deeplinks": "*",
+    "react": "*"
   },
   "devDependencies": {
     "@atao60/fse-cli": "~0.1.7",
